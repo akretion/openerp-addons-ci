@@ -12,7 +12,7 @@ services:
 
 before_script:
     - psql -c "CREATE USER openerp WITH PASSWORD 'admin';" -U postgres
-    - psql -c 'create database rsocb with owner openerp;' -U postgres
+    - psql -c 'create database ocb with owner openerp;' -U postgres
 
 install:
     - ./.travis_install_nightly.sh
@@ -23,7 +23,3 @@ script:
 notifications:
   email:
     - raphael.valyi@akretion.com
-
-branches:
-  only:
-    - rs-ocb-7.0
