@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-14 22:29+0000\n"
-"PO-Revision-Date: 2013-11-24 10:34+0000\n"
-"Last-Translator: Yoshi Tashiro <yostashiro@gmail.com>\n"
+"PO-Revision-Date: 2014-01-18 15:46+0000\n"
+"Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-25 06:00+0000\n"
-"X-Generator: Launchpad (build 16831)\n"
+"X-Launchpad-Export-Date: 2014-01-19 05:58+0000\n"
+"X-Generator: Launchpad (build 16901)\n"
 
 #. module: account
 #: model:process.transition,name:account.process_transition_supplierreconcilepaid0
@@ -278,6 +278,8 @@ msgid ""
 "sales, purchase, expense, contra, etc.\n"
 "                This installs the module account_voucher."
 msgstr ""
+"銀行や現金、販売、仕入、費用、契約など証票記入のすべての基本的な要件を含みます。\n"
+"                account_voucherモジュールがインストールされます。"
 
 #. module: account
 #: model:ir.actions.act_window,name:account.action_account_use_model_create_entry
@@ -309,6 +311,14 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして顧客返金を登録してください。\n"
+"              </p><p>\n"
+"                返金は請求書を完全または部分的にクレジットする文書です。\n"
+"              </p><p>\n"
+"                顧客返金をマニュアルで登録する代わりに、関連する顧客請求書から直接生成することもできます。\n"
+"              </p>\n"
+"            "
 
 #. module: account
 #: help:account.installer,charts:0
@@ -439,6 +449,10 @@ msgid ""
 "this box, you will be able to do invoicing & payments,\n"
 "                but not accounting (Journal Items, Chart of Accounts, ...)"
 msgstr ""
+"企業や個人が所有する資産を管理します。\n"
+"                資産で発生した減価償却費を追跡、口座の動きを作成します。\n"
+"                account_assetモジュールがインストールされます。\n"
+"                このボックスをチェックしない場合も請求と支払いはできますが、仕訳項目や勘定科目には影響しません。"
 
 #. module: account
 #: help:account.bank.statement.line,name:0
@@ -477,6 +491,9 @@ msgid ""
 "should choose 'Round per line' because you certainly want the sum of your "
 "tax-included line subtotals to be equal to the total amount with taxes."
 msgstr ""
+"「明細ごとに丸め」を選択すると最初に購入/販売注文書や請求書の各行に対して税額の計算と丸めを行い、次にこれらを加算して合計金額とします。「全体で丸め」を選"
+"択すると購入/販売注文書や請求書の各行に対して税額の計算を行い、最終的にこれらの合計金額を丸めます。\r\n"
+"税込みで販売する場合は、税込み行を加算した金額と合計が一致するように「明細ごとに丸め」を選択します。"
 
 #. module: account
 #: model:ir.model,name:account.model_wizard_multi_charts_accounts
@@ -622,7 +639,7 @@ msgstr "全て"
 #. module: account
 #: field:account.config.settings,decimal_precision:0
 msgid "Decimal precision on journal entries"
-msgstr ""
+msgstr "仕訳の小数点精度"
 
 #. module: account
 #: selection:account.config.settings,period:0
@@ -694,6 +711,10 @@ msgid ""
 "either the user pressed the button \"Nothing more to reconcile\" during the "
 "manual reconciliation process."
 msgstr ""
+"取引先の会計項目が完全に一致した前回の日付です。この日に一致したという事実を示しているに過ぎないため、取引先の消し込みを行った日付とは異なります。これは2"
+"つの異なる方法で達成されます。\r\n"
+"未消し込みの借方/貸方のどちらかが一致した\r\n"
+"マニュアルの消し込み処理で\"Nothing more to reconcile\"ボタンが押された"
 
 #. module: account
 #: model:ir.model,name:account.model_report_account_type_sales
@@ -777,7 +798,7 @@ msgstr "売掛金勘定"
 #. module: account
 #: view:account.config.settings:0
 msgid "Configure your company bank accounts"
-msgstr ""
+msgstr "あなたの会社の銀行口座を設定"
 
 #. module: account
 #: view:account.invoice.refund:0
@@ -946,7 +967,7 @@ msgstr "J.C. / Move 名前"
 #. module: account
 #: view:account.account:0
 msgid "Account Code and Name"
-msgstr ""
+msgstr "勘定コードと名前"
 
 #. module: account
 #: selection:account.entries.report,month:0
@@ -983,6 +1004,10 @@ msgid ""
 "                </p>\n"
 "            "
 msgstr ""
+"<p>\n"
+"                    仕訳項目は見つかりません。\n"
+"                </p>\n"
+"            "
 
 #. module: account
 #: code:addons/account/account.py:1677
@@ -1052,7 +1077,7 @@ msgstr "合計金額"
 #. module: account
 #: help:account.invoice,supplier_invoice_number:0
 msgid "The reference of this invoice as provided by the supplier."
-msgstr ""
+msgstr "仕入先から提供される請求書の参照"
 
 #. module: account
 #: selection:account.account,type:0
@@ -1184,7 +1209,7 @@ msgstr "アカウント名"
 #. module: account
 #: field:account.journal,with_last_closing_balance:0
 msgid "Opening With Last Closing Balance"
-msgstr ""
+msgstr "前回の期末残高で開始"
 
 #. module: account
 #: help:account.tax.code,notprintable:0
@@ -1223,7 +1248,7 @@ msgstr "返金 "
 #. module: account
 #: help:account.config.settings,company_footer:0
 msgid "Bank accounts as printed in the footer of each printed document"
-msgstr ""
+msgstr "各印刷文書のフッタに印刷される銀行口座"
 
 #. module: account
 #: view:account.tax:0
@@ -1264,6 +1289,14 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして新しいキャッシュログを作成してください。\n"
+"              </p><p>\n"
+"                "
+"キャッシュレジスタは現金仕訳帳の記入を管理します。この機能は日常的な現金支払いを簡単にします。キャッシュボックス内の残高を入力した後で、入金や出金があった"
+"時に入力します。\n"
+"</p>\n"
+"            "
 
 #. module: account
 #: model:account.account.type,name:account.data_account_type_bank
@@ -1543,7 +1576,7 @@ msgstr "請求書ステータス"
 #: model:ir.actions.act_window,name:account.action_account_open_closed_fiscalyear
 #: model:ir.ui.menu,name:account.menu_wizard_account_open_closed_fiscalyear
 msgid "Cancel Closing Entries"
-msgstr ""
+msgstr "決算仕訳の取り消し"
 
 #. module: account
 #: view:account.bank.statement:0
@@ -1646,7 +1679,7 @@ msgstr ""
 #. module: account
 #: view:account.config.settings:0
 msgid "eInvoicing & Payments"
-msgstr ""
+msgstr "請求と支払い"
 
 #. module: account
 #: view:account.analytic.cost.ledger.journal.report:0
@@ -1693,7 +1726,7 @@ msgstr "事例コード"
 #. module: account
 #: field:account.config.settings,company_footer:0
 msgid "Bank accounts footer preview"
-msgstr ""
+msgstr "銀行口座のフッタをプレビュー"
 
 #. module: account
 #: selection:account.account,type:0
@@ -1840,7 +1873,7 @@ msgstr "会計年度の順序"
 #. module: account
 #: field:account.config.settings,group_analytic_accounting:0
 msgid "Analytic accounting"
-msgstr ""
+msgstr "分析会計"
 
 #. module: account
 #: report:account.overdue:0
@@ -1859,6 +1892,9 @@ msgid ""
 "should choose 'Round per line' because you certainly want the sum of your "
 "tax-included line subtotals to be equal to the total amount with taxes."
 msgstr ""
+"「明細ごとに丸め」を選択すると最初に購入/販売注文書や請求書の各行に対して税額の計算と丸めを行い、次にこれらを加算して合計金額とします。「全体で丸め」を選"
+"択すると購入/販売注文書や請求書の各行に対して税額の計算を行い、最終的にこれらの合計金額を丸めます。\r\n"
+"税込みで販売する場合は、税込み行を加算した金額と合計が一致するように「明細ごとに丸め」を選択します。"
 
 #. module: account
 #: model:ir.actions.act_window,name:account.action_report_account_type_sales_tree_all
@@ -1870,7 +1906,7 @@ msgstr "勘定タイプ別売上"
 #: model:account.payment.term,name:account.account_payment_term_15days
 #: model:account.payment.term,note:account.account_payment_term_15days
 msgid "15 Days"
-msgstr ""
+msgstr "15日以内"
 
 #. module: account
 #: model:ir.ui.menu,name:account.periodical_processing_invoicing
@@ -1947,7 +1983,7 @@ msgstr "売掛金と買掛金"
 #. module: account
 #: field:account.config.settings,module_account_payment:0
 msgid "Manage payment orders"
-msgstr ""
+msgstr "支払指図を管理"
 
 #. module: account
 #: view:account.period:0
@@ -1958,7 +1994,7 @@ msgstr ""
 #: view:account.bank.statement:0
 #: field:account.bank.statement,last_closing_balance:0
 msgid "Last Closing Balance"
-msgstr ""
+msgstr "前回の期末残高"
 
 #. module: account
 #: model:ir.model,name:account.model_account_common_journal_report
@@ -2010,7 +2046,7 @@ msgstr ""
 #. module: account
 #: field:account.config.settings,module_account_check_writing:0
 msgid "Pay your suppliers by check"
-msgstr ""
+msgstr "仕入先に小切手で支払う"
 
 #. module: account
 #: field:account.move.line.reconcile,credit:0
@@ -2033,6 +2069,11 @@ msgid ""
 "useful because it enables you to preview at any time the tax that you owe at "
 "the start and end of the month or quarter."
 msgstr ""
+"このメニューでは請求書や支払いに基づいた税申告書を印刷します。\r\n"
+"会計年度のひとつ、または複数の期間を選択します。\r\n"
+"税申告に必要な情報はOpenERPが請求書(国によっては支払い)から自動的に生成します。\r\n"
+"このデータはリアルタイムで更新されます。\r\n"
+"月または四半期の開始と終了に支払い義務のある税金をいつでもプレビューできるため非常に役立ちます。"
 
 #. module: account
 #: code:addons/account/account.py:409
@@ -2161,11 +2202,20 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして銀行取引明細書を登録してください。\n"
+"              </p><p>\n"
+"                "
+"銀行取引明細書は一定の期間に渡って銀行口座に発生するすべての金融取引の要約です。あなたは、これを銀行から定期的に受け取るべきです。\n"
+"              </p><p>\n"
+"                OpenERPは関連する販売または購買の請求書と取引明細書を直接に擦り合わせることができます。\n"
+"</p>\n"
+"            "
 
 #. module: account
 #: field:account.config.settings,currency_id:0
 msgid "Default company currency"
-msgstr ""
+msgstr "デフォルトの企業通貨"
 
 #. module: account
 #: field:account.invoice,move_id:0
@@ -2290,7 +2340,7 @@ msgstr ""
 #. module: account
 #: field:account.config.settings,module_account_asset:0
 msgid "Assets management"
-msgstr ""
+msgstr "資産管理"
 
 #. module: account
 #: view:account.account:0
@@ -2383,7 +2433,7 @@ msgstr "エントリーを開く"
 #. module: account
 #: field:account.config.settings,purchase_refund_sequence_next:0
 msgid "Next supplier credit note number"
-msgstr ""
+msgstr "次の仕入先クレジットノート番号"
 
 #. module: account
 #: field:account.automatic.reconcile,account_ids:0
@@ -2507,7 +2557,7 @@ msgstr "収益勘定"
 #. module: account
 #: help:account.config.settings,default_sale_tax:0
 msgid "This sale tax will be assigned by default on new products."
-msgstr ""
+msgstr "販売税はデフォルトで新製品に割り当てられます。"
 
 #. module: account
 #: report:account.general.ledger_landscape:0
@@ -2845,7 +2895,7 @@ msgstr "分析勘定"
 #: field:account.config.settings,default_purchase_tax:0
 #: field:account.config.settings,purchase_tax:0
 msgid "Default purchase tax"
-msgstr ""
+msgstr "デフォルト消費税（購入）"
 
 #. module: account
 #: view:account.account:0
@@ -3154,7 +3204,7 @@ msgstr "8月"
 #. module: account
 #: field:accounting.report,debit_credit:0
 msgid "Display Debit/Credit Columns"
-msgstr ""
+msgstr "借方/貸方欄を表示"
 
 #. module: account
 #: report:account.journal.period.print:0
@@ -3388,7 +3438,7 @@ msgstr "常に"
 #: field:account.config.settings,module_account_accountant:0
 msgid ""
 "Full accounting features: journals, legal statements, chart of accounts, etc."
-msgstr ""
+msgstr "完全な会計機能：仕訳、法的な計算書、勘定科目表など。"
 
 #. module: account
 #: view:account.analytic.line:0
@@ -3673,7 +3723,7 @@ msgstr "会計アプリケーションの設定"
 #. module: account
 #: model:ir.actions.act_window,name:account.action_account_vat_declaration
 msgid "Account Tax Declaration"
-msgstr ""
+msgstr "税申告を報告"
 
 #. module: account
 #: help:account.bank.statement,name:0
@@ -3718,7 +3768,7 @@ msgstr "期間を閉じる"
 #: view:account.bank.statement:0
 #: field:account.cashbox.line,subtotal_opening:0
 msgid "Opening Subtotal"
-msgstr ""
+msgstr "期首小計"
 
 #. module: account
 #: constraint:account.move.line:0
@@ -3752,6 +3802,8 @@ msgid ""
 "quotations with a button \"Pay with  Paypal\" in automated emails or through "
 "the OpenERP portal."
 msgstr ""
+"クレジットカードなどでオンライン決済を受信するためのPayPalアカウント(電子メール)を設定した場合、顧客は「PayPalで支払い」ボタンにより自動化さ"
+"れた電子メールやOpenERPポータルを通じて請求書や見積書の支払いができるようになります。"
 
 #. module: account
 #: code:addons/account/account_move_line.py:536
@@ -3877,6 +3929,15 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして顧客請求書を登録してください。\n"
+"              </p><p>\n"
+"                OpenERPの電子請求は顧客入金の回収を容易にします。\n"
+"                顧客は電子メールで請求書を受け取り、顧客のシステムがオンラインで支払うかインポートすることができます。\n"
+"              </p><p>\n"
+"                顧客との議論は各請求書の下部に自動で表示されます。\n"
+"              </p>\n"
+"            "
 
 #. module: account
 #: field:account.tax.code,name:0
@@ -3963,7 +4024,7 @@ msgstr "詳細"
 #. module: account
 #: help:account.config.settings,default_purchase_tax:0
 msgid "This purchase tax will be assigned by default on new products."
-msgstr ""
+msgstr "購入税はデフォルトで新製品に割り当てられます。"
 
 #. module: account
 #: report:account.account.balance:0
@@ -4122,7 +4183,7 @@ msgstr "適用可能（Pythonコードによって計算）でない場合は、
 #. module: account
 #: field:account.config.settings,group_check_supplier_invoice_total:0
 msgid "Check the total of supplier invoices"
-msgstr ""
+msgstr "仕入先請求書の合計を確認"
 
 #. module: account
 #: view:account.tax:0
@@ -4393,7 +4454,7 @@ msgstr "資産"
 #. module: account
 #: view:account.config.settings:0
 msgid "Accounting & Finance"
-msgstr ""
+msgstr "会計と財務"
 
 #. module: account
 #: view:account.invoice.confirm:0
@@ -4457,7 +4518,7 @@ msgstr "分析的な残高"
 msgid ""
 "This payment term will be used instead of the default one for sale orders "
 "and customer invoices"
-msgstr ""
+msgstr "この支払い条件は受注と顧客請求でデフォルトの代わりに使用されます。"
 
 #. module: account
 #: view:account.config.settings:0
@@ -4499,7 +4560,7 @@ msgid ""
 "As an example, a decimal precision of 2 will allow journal entries  like: "
 "9.99 EUR, whereas a decimal precision of 4 will allow journal  entries like: "
 "0.0231 EUR."
-msgstr ""
+msgstr "例として、小数点以下2桁が9.99 EURとなるのに対し、小数点以下4桁は0.0231 EURのようになります。"
 
 #. module: account
 #: field:account.account,shortcut:0
@@ -4538,6 +4599,14 @@ msgid ""
 "          </p>\n"
 "        "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"            クリックして新しい銀行口座を開設します。\n"
+"          </p><p>\n"
+"            報告書のフッタに表示されるあなたの会社の銀行口座の設定と選択を行います。\n"
+"          </p><p>\n"
+"            OpenERPの会計アプリを使用する場合、これらのデータに基づいた勘定科目と仕訳は自動的に作成されます。\n"
+"          </p>\n"
+"        "
 
 #. module: account
 #: model:ir.model,name:account.model_account_invoice_cancel
@@ -4823,7 +4892,7 @@ msgstr "クレジットノート"
 #: view:account.move.line:0
 #: model:ir.actions.act_window,name:account.action_account_manual_reconcile
 msgid "Journal Items to Reconcile"
-msgstr ""
+msgstr "調整する仕訳項目"
 
 #. module: account
 #: model:ir.model,name:account.model_account_tax_template
@@ -4956,7 +5025,7 @@ msgstr ""
 #. module: account
 #: help:account.config.settings,group_proforma_invoices:0
 msgid "Allows you to put invoices in pro-forma state."
-msgstr ""
+msgstr "請求書を試算状態にできます。"
 
 #. module: account
 #: view:account.journal:0
@@ -5204,7 +5273,7 @@ msgstr "レビューすべき仕訳帳エントリー"
 #. module: account
 #: selection:res.company,tax_calculation_rounding_method:0
 msgid "Round Globally"
-msgstr ""
+msgstr "全体で丸め"
 
 #. module: account
 #: view:account.bank.statement:0
@@ -5246,7 +5315,7 @@ msgstr "有効"
 #: view:account.bank.statement:0
 #: field:account.journal,cash_control:0
 msgid "Cash Control"
-msgstr ""
+msgstr "現金管理"
 
 #. module: account
 #: field:account.analytic.balance,date2:0
@@ -5330,7 +5399,7 @@ msgstr ""
 msgid ""
 "If you do not check this box, you will be able to do invoicing & payments, "
 "but not accounting (Journal Items, Chart of  Accounts, ...)"
-msgstr ""
+msgstr "このボックスをチェックしない場合も請求と支払いは行いますが、仕訳項目や勘定科目には影響しません。"
 
 #. module: account
 #: view:account.period:0
@@ -5411,7 +5480,7 @@ msgstr ""
 #: view:account.bank.statement:0
 #: help:account.cashbox.line,number_opening:0
 msgid "Opening Unit Numbers"
-msgstr ""
+msgstr "期首数量"
 
 #. module: account
 #: field:account.subscription,period_type:0
@@ -5526,7 +5595,7 @@ msgstr "貸借対照表"
 #: code:addons/account/account.py:188
 #, python-format
 msgid "Profit & Loss (Income account)"
-msgstr "損益（損益勘定）"
+msgstr "損益計算書（収益勘定）"
 
 #. module: account
 #: field:account.journal,allow_date:0
@@ -5886,7 +5955,7 @@ msgstr "通貨金額"
 #. module: account
 #: selection:res.company,tax_calculation_rounding_method:0
 msgid "Round per Line"
-msgstr ""
+msgstr "明細ごとに丸め"
 
 #. module: account
 #: report:account.analytic.account.balance:0
@@ -5922,6 +5991,15 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして仕訳記入を登録してください。\n"
+"              </p><p>\n"
+"                仕訳記入はそれぞれが貸方か借方の取引からなる、いくつかの仕訳項目で構成されます。\n"
+"              </p><p>\n"
+"                OpenERPは請求書や返金、仕入先支払い、銀行取引明細書などの会計文書ごとにひとつの仕訳記入を自動で登録します。\n"
+"                したがって、その他の操作についてはマニュアルで仕訳記入しなければなりません。\n"
+"</p>\n"
+"            "
 
 #. module: account
 #: selection:account.financial.report,style_overwrite:0
@@ -5938,7 +6016,7 @@ msgstr "支払いエントリーは消し込みの第２の入力です。"
 msgid ""
 "This payment term will be used instead of the default one for purchase "
 "orders and supplier invoices"
-msgstr ""
+msgstr "この支払い条件は発注と仕入先請求でデフォルトの代わりに使用されます。"
 
 #. module: account
 #: code:addons/account/account_invoice.py:474
@@ -6264,7 +6342,7 @@ msgstr "期首残高と取引行を基本に計算された残高"
 #. module: account
 #: field:account.journal,loss_account_id:0
 msgid "Loss Account"
-msgstr ""
+msgstr "損失勘定"
 
 #. module: account
 #: field:account.tax,account_collected_id:0
@@ -6358,7 +6436,7 @@ msgstr "この仕訳帳と関係する会社"
 #. module: account
 #: help:account.config.settings,group_multi_currency:0
 msgid "Allows you multi currency environment"
-msgstr ""
+msgstr "多通貨を許可します。"
 
 #. module: account
 #: view:account.subscription:0
@@ -6432,7 +6510,7 @@ msgstr "分析行"
 #. module: account
 #: model:ir.ui.menu,name:account.menu_action_model_form
 msgid "Models"
-msgstr ""
+msgstr "モデル"
 
 #. module: account
 #: code:addons/account/account_invoice.py:1124
@@ -6475,6 +6553,12 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして仕入先からの返金を登録してください。\n"
+"              </p><p>\n"
+"                仕入先返金をマニュアルで登録する代わりに、関連する仕入先請求書から返金と消し込みを直接生成することもできます。\n"
+"</p>\n"
+"            "
 
 #. module: account
 #: field:account.tax,type:0
@@ -6523,7 +6607,7 @@ msgstr "子を平坦に表示"
 #. module: account
 #: view:account.config.settings:0
 msgid "Bank & Cash"
-msgstr ""
+msgstr "銀行と現金"
 
 #. module: account
 #: help:account.fiscalyear.close.state,fy_id:0
@@ -6649,7 +6733,7 @@ msgstr "株式"
 #. module: account
 #: field:account.journal,internal_account_id:0
 msgid "Internal Transfers Account"
-msgstr ""
+msgstr "内部振替勘定"
 
 #. module: account
 #: code:addons/account/wizard/pos_box.py:32
@@ -6665,7 +6749,7 @@ msgstr "パーセンテージ"
 #. module: account
 #: selection:account.config.settings,tax_calculation_rounding_method:0
 msgid "Round globally"
-msgstr ""
+msgstr "全体で丸め"
 
 #. module: account
 #: selection:account.report.general.ledger,sortby:0
@@ -6736,6 +6820,8 @@ msgid ""
 "due date, make sure that the payment term is not set on the invoice. If you "
 "keep the payment term and the due date empty, it means direct payment."
 msgstr ""
+"支払条件を使用する場合、期日は会計項目の生成時に自動で計算されます。支払条件は複数の期日(たとえば直ぐに50%、1ヶ月以内に50%)を計算できます。期日を"
+"強制したい場合、支払条件は請求書に設定されないことを確認してください。支払条件を設定して期日が空の場合は直接支払いを意味します。"
 
 #. module: account
 #: code:addons/account/account.py:414
@@ -6775,7 +6861,7 @@ msgstr ""
 #. module: account
 #: view:account.open.closed.fiscalyear:0
 msgid "Discard"
-msgstr ""
+msgstr "破棄"
 
 #. module: account
 #: selection:account.account,type:0
@@ -7079,7 +7165,7 @@ msgstr "エントリー作成"
 #. module: account
 #: view:account.open.closed.fiscalyear:0
 msgid "Cancel Fiscal Year Closing Entries"
-msgstr ""
+msgstr "会計年度の決算仕訳を取り消し"
 
 #. module: account
 #: selection:account.account.type,report_type:0
@@ -7091,7 +7177,7 @@ msgstr "損益計算書（費用勘定）"
 #. module: account
 #: field:account.bank.statement,total_entry_encoding:0
 msgid "Total Transactions"
-msgstr ""
+msgstr "総取引"
 
 #. module: account
 #: code:addons/account/account.py:636
@@ -7527,7 +7613,7 @@ msgstr "期初仕訳費用勘定"
 #. module: account
 #: view:account.invoice:0
 msgid "Customer Reference"
-msgstr ""
+msgstr "顧客参照"
 
 #. module: account
 #: field:account.account.template,parent_id:0
@@ -7571,7 +7657,7 @@ msgstr "パーセントは0から1までの比率を入力します。"
 #. module: account
 #: view:account.invoice:0
 msgid "Accounting Period"
-msgstr ""
+msgstr "会計期間"
 
 #. module: account
 #: view:account.invoice.report:0
@@ -7645,7 +7731,7 @@ msgstr "期初仕訳収益勘定"
 #. module: account
 #: field:account.config.settings,group_proforma_invoices:0
 msgid "Allow pro-forma invoices"
-msgstr ""
+msgstr "見積送り状を許可"
 
 #. module: account
 #: view:account.bank.statement:0
@@ -7684,7 +7770,7 @@ msgstr ""
 #. module: account
 #: help:account.config.settings,currency_id:0
 msgid "Main currency of the company."
-msgstr ""
+msgstr "会社の主な通貨"
 
 #. module: account
 #: model:ir.ui.menu,name:account.menu_finance_reports
@@ -7713,7 +7799,7 @@ msgstr "アカウント仕訳帳"
 #. module: account
 #: field:account.config.settings,tax_calculation_rounding_method:0
 msgid "Tax calculation rounding method"
-msgstr ""
+msgstr "税計算の丸め方法"
 
 #. module: account
 #: model:process.node,name:account.process_node_paidinvoice0
@@ -8075,7 +8161,7 @@ msgstr "順序"
 #. module: account
 #: field:account.config.settings,paypal_account:0
 msgid "Paypal account"
-msgstr ""
+msgstr "PayPalアカウント"
 
 #. module: account
 #: selection:account.print.journal,sort_selection:0
@@ -8230,7 +8316,7 @@ msgstr ""
 #. module: account
 #: field:res.company,tax_calculation_rounding_method:0
 msgid "Tax Calculation Rounding Method"
-msgstr ""
+msgstr "税計算の丸め方法"
 
 #. module: account
 #: field:account.entries.report,move_line_state:0
@@ -8380,7 +8466,7 @@ msgstr "残差合計"
 #. module: account
 #: view:account.bank.statement:0
 msgid "Opening Cash Control"
-msgstr ""
+msgstr "現在の現金管理"
 
 #. module: account
 #: model:process.node,note:account.process_node_invoiceinvoice0
@@ -8478,6 +8564,8 @@ msgid ""
 "recalls.\n"
 "                This installs the module account_followup."
 msgstr ""
+"複数レベルの想起で支払い督促を自動化できます。\n"
+"                account_followupモジュールがインストールされます。"
 
 #. module: account
 #: field:account.automatic.reconcile,period_id:0
@@ -8525,7 +8613,7 @@ msgstr ""
 #. module: account
 #: field:account.config.settings,sale_sequence_next:0
 msgid "Next invoice number"
-msgstr ""
+msgstr "次の請求書番号"
 
 #. module: account
 #: model:ir.ui.menu,name:account.menu_finance_generic_reporting
@@ -8568,7 +8656,7 @@ msgstr "課税基準金額"
 msgid ""
 "This wizard will remove the end of year journal entries of selected fiscal "
 "year. Note that you can run this wizard many times for the same fiscal year."
-msgstr ""
+msgstr "このウィザードは選択した会計年度の最後の仕訳項目を削除します。同じ会計年度ではこのウィザードを何度も実行できることに注意してください。"
 
 #. module: account
 #: report:account.invoice:0
@@ -8693,7 +8781,7 @@ msgstr ""
 #. module: account
 #: field:account.account.type,report_type:0
 msgid "P&L / BS Category"
-msgstr "損益計算書 / 貸借対照表分類"
+msgstr "損益計算書 / 貸借対照表区分"
 
 #. module: account
 #: view:account.automatic.reconcile:0
@@ -8848,7 +8936,7 @@ msgstr "許可勘定科目タイプ（制御なしは空）"
 #. module: account
 #: view:account.payment.term:0
 msgid "Payment term explanation for the customer..."
-msgstr ""
+msgstr "顧客の支払条件を説明…"
 
 #. module: account
 #: help:account.move.line,amount_residual:0
@@ -8953,6 +9041,14 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして新しい定期項目を定義します。\n"
+"              </p><p>\n"
+"                "
+"定期項目は特定の日付から定期的に発生、つまり契約の署名や顧客または仕入先との取り決めに対応します。システムでの転記を自動化するため、このような項目を作成で"
+"きます。\n"
+"              </p>\n"
+"            "
 
 #. module: account
 #: view:account.journal:0
@@ -8995,6 +9091,8 @@ msgid ""
 "This allows you to check writing and printing.\n"
 "                This installs the module account_check_writing."
 msgstr ""
+"小切手の振り出しと印刷ができます。\n"
+"                account_check_writingがインストールされます。"
 
 #. module: account
 #: model:res.groups,name:account.group_account_invoice
@@ -9176,6 +9274,8 @@ msgid ""
 "You cannot select an account type with a deferral method different of "
 "\"Unreconciled\" for accounts with internal type \"Payable/Receivable\"."
 msgstr ""
+"設定エラー！\n"
+"内部タイプが「売掛金/買掛金」のアカウントは「未消込」以外の繰延方法でアカウントタイプを選択できません。"
 
 #. module: account
 #: field:account.config.settings,has_fiscal_year:0
@@ -9238,7 +9338,7 @@ msgstr "期間の開始日"
 #. module: account
 #: field:account.cashbox.line,pieces:0
 msgid "Unit of Currency"
-msgstr ""
+msgstr "通貨単位"
 
 #. module: account
 #: code:addons/account/account.py:3195
@@ -9472,6 +9572,10 @@ msgid ""
 "payments.\n"
 "                This installs the module account_payment."
 msgstr ""
+"以下を目的とした支払指図の作成と管理ができます。\n"
+"                    * 様々な自動化された支払い手順を容易にプラグインするためのベースとして\n"
+"                    * 請求書の支払いを管理するためのより効率的な方法を提供\n"
+"                account_paymentモジュールがインストールされます。"
 
 #. module: account
 #: xsl:account.transfer:0
@@ -9539,7 +9643,7 @@ msgstr "支払対象"
 #. module: account
 #: view:account.account:0
 msgid "Account name"
-msgstr ""
+msgstr "勘定科目名"
 
 #. module: account
 #: view:board.board:0
@@ -9602,7 +9706,7 @@ msgstr ""
 #. module: account
 #: view:account.bank.statement:0
 msgid "Date / Period"
-msgstr ""
+msgstr "日付 / 期間"
 
 #. module: account
 #: report:account.central.journal:0
@@ -9681,7 +9785,7 @@ msgstr "一般的なレポート"
 #: field:account.config.settings,default_sale_tax:0
 #: field:account.config.settings,sale_tax:0
 msgid "Default sale tax"
-msgstr ""
+msgstr "デフォルト消費税（販売）"
 
 #. module: account
 #: report:account.overdue:0
@@ -9777,7 +9881,7 @@ msgstr "期日"
 #: model:account.payment.term,name:account.account_payment_term_immediate
 #: model:account.payment.term,note:account.account_payment_term_immediate
 msgid "Immediate Payment"
-msgstr ""
+msgstr "即時払い"
 
 #. module: account
 #: code:addons/account/account.py:1502
@@ -9991,6 +10095,9 @@ msgid ""
 "analytic account.\n"
 "                This installs the module account_budget."
 msgstr ""
+"会計担当者は異なる分野の予算と分析を管理できます。\n"
+"                プロジェクト管理者は全体予算と個別予算を定義することで、各分析会計の予定額を設定できます。\n"
+"                account_budgetモジュールがインストールされます。"
 
 #. module: account
 #: field:account.bank.statement.line,name:0
@@ -10523,7 +10630,7 @@ msgstr "請求書は完了状態です。"
 #. module: account
 #: field:account.config.settings,module_account_followup:0
 msgid "Manage customer payment follow-ups"
-msgstr ""
+msgstr "顧客支払を管理"
 
 #. module: account
 #: model:ir.model,name:account.model_report_account_sales
@@ -10779,6 +10886,14 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                記入したい期間と仕訳帳を選択します。\n"
+"              </p><p>\n"
+"                "
+"このビューは会計担当者が受注の際にOpenERPの項目に素早く記録するため使用できます。仕入先請求書を記録したい場合、費用勘定の記録から始めます。Open"
+"ERPはこの勘定に関連する税と「買掛金勘定」を自動で提案します。\n"
+"              </p>\n"
+"            "
 
 #. module: account
 #: help:account.invoice.line,account_id:0
@@ -10848,7 +10963,7 @@ msgstr "アカウント移動行の検証"
 #: help:res.partner,property_account_position:0
 msgid ""
 "The fiscal position will determine taxes and accounts used for the partner."
-msgstr ""
+msgstr "財政状況は取引先の税と勘定を決定します。"
 
 #. module: account
 #: model:process.node,note:account.process_node_supplierpaidinvoice0
@@ -11029,7 +11144,7 @@ msgstr "このラベルは所定の比較フィルタのために、計算され
 #. module: account
 #: selection:account.config.settings,tax_calculation_rounding_method:0
 msgid "Round per line"
-msgstr ""
+msgstr "明細ごとに丸め"
 
 #. module: account
 #: help:account.move.line,amount_residual_currency:0

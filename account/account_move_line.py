@@ -562,10 +562,11 @@ class account_move_line(osv.osv):
     ]
 
     def _auto_init(self, cr, context=None):
-        super(account_move_line, self)._auto_init(cr, context=context)
+        res = super(account_move_line, self)._auto_init(cr, context=context)
         cr.execute('SELECT indexname FROM pg_indexes WHERE indexname = \'account_move_line_journal_id_period_id_index\'')
         if not cr.fetchone():
             cr.execute('CREATE INDEX account_move_line_journal_id_period_id_index ON account_move_line (journal_id, period_id)')
+        return res
 
     def _check_no_view(self, cr, uid, ids, context=None):
         lines = self.browse(cr, uid, ids, context=context)
@@ -849,18 +850,17 @@ class account_move_line(osv.osv):
                    (tuple(ids), ))
         r = cr.fetchall()
         #TODO: move this check to a constraint in the account_move_reconcile object
+        if len(r) != 1:
+            raise osv.except_osv(_('Error'), _('Entries are not of the same account or already reconciled ! '))
         if not unrec_lines:
             raise osv.except_osv(_('Error!'), _('Entry is already reconciled.'))
         account = account_obj.browse(cr, uid, account_id, context=context)
+        if not account.reconcile:
+            raise osv.except_osv(_('Error'), _('The account is not defined to be reconciled !'))
         if r[0][1] != None:
             raise osv.except_osv(_('Error!'), _('Some entries are already reconciled.'))
 
-        if context.get('fy_closing'):
-            # We don't want to generate any write-off when being called from the
-            # wizard used to close a fiscal year (and it doesn't give us any
-            # writeoff_acc_id).
-            pass
-        elif (not currency_obj.is_zero(cr, uid, account.company_id.currency_id, writeoff)) or \
+        if (not currency_obj.is_zero(cr, uid, account.company_id.currency_id, writeoff)) or \
            (account.currency_id and (not currency_obj.is_zero(cr, uid, account.currency_id, currency))):
             if not writeoff_acc_id:
                 raise osv.except_osv(_('Warning!'), _('You have to provide an account for the write off/exchange difference entry.'))
@@ -1201,7 +1201,7 @@ class account_move_line(osv.osv):
                         break
             # Automatically convert in the account's secondary currency if there is one and
             # the provided values were not already multi-currency
-            if account.currency_id and (vals.get('amount_currency', False) is False) and account.currency_id.id != account.company_id.currency_id.id:
+            if account.currency_id and 'amount_currency' not in vals and account.currency_id.id != account.company_id.currency_id.id:
                 vals['currency_id'] = account.currency_id.id
                 ctx = {}
                 if 'date' in vals:

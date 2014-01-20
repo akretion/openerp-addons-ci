@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-07 19:36+0000\n"
-"PO-Revision-Date: 2013-11-10 05:03+0000\n"
-"Last-Translator: Yoshi Tashiro <yostashiro@gmail.com>\n"
+"PO-Revision-Date: 2014-01-18 16:11+0000\n"
+"Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-21 06:33+0000\n"
-"X-Generator: Launchpad (build 16831)\n"
+"X-Launchpad-Export-Date: 2014-01-19 05:59+0000\n"
+"X-Generator: Launchpad (build 16901)\n"
 
 #. module: sale
 #: model:ir.model,name:sale.model_account_config_settings
@@ -70,7 +70,7 @@ msgstr ""
 #. module: sale
 #: help:sale.config.settings,group_discount_per_so_line:0
 msgid "Allows you to apply some discount per sales order line."
-msgstr ""
+msgstr "受注明細ごとにいくつかの値引きを適用できます。"
 
 #. module: sale
 #: help:sale.order,message_unread:0
@@ -137,6 +137,8 @@ msgid ""
 "Allows to manage different prices based on rules per category of customers.\n"
 "Example: 10% for retailers, promotion of 5 EUR on this product, etc."
 msgstr ""
+"顧客のカテゴリ別のルールに基づいて異なる価格を管理できます。\n"
+"例：小売業者に対して10%や5 EURの奨励など。"
 
 #. module: sale
 #: selection:sale.advance.payment.inv,advance_payment_method:0
@@ -151,7 +153,7 @@ msgstr "デフォルト支払条件"
 #. module: sale
 #: field:sale.config.settings,group_uom:0
 msgid "Allow using different units of measures"
-msgstr ""
+msgstr "異なる単位の使用を許可"
 
 #. module: sale
 #: selection:sale.advance.payment.inv,advance_payment_method:0
@@ -222,7 +224,7 @@ msgstr ""
 #. module: sale
 #: view:sale.config.settings:0
 msgid "Invoicing Process"
-msgstr ""
+msgstr "請求プロセス"
 
 #. module: sale
 #: view:sale.order:0
@@ -239,7 +241,7 @@ msgstr "見積と受注"
 #: help:sale.config.settings,group_uom:0
 msgid ""
 "Allows you to select and maintain different units of measure for products."
-msgstr ""
+msgstr "製品に異なる単位の選択と維持ができます。"
 
 #. module: sale
 #: model:ir.model,name:sale.model_sale_make_invoice
@@ -271,7 +273,7 @@ msgstr "私の見積"
 #. module: sale
 #: field:sale.config.settings,module_warning:0
 msgid "Allow configuring alerts by customer or products"
-msgstr ""
+msgstr "顧客や製品によるアラートの設定を許可"
 
 #. module: sale
 #: field:sale.shop,name:0
@@ -568,7 +570,7 @@ msgstr "合計金額"
 #. module: sale
 #: field:sale.config.settings,module_sale_journal:0
 msgid "Allow batch invoicing of delivery orders through journals"
-msgstr ""
+msgstr "仕訳を通して配送指示書の一括請求を許可"
 
 #. module: sale
 #: field:sale.order.line,price_subtotal:0
@@ -655,6 +657,8 @@ msgid ""
 "                and perform batch operations on journals.\n"
 "                This installs the module sale_journal."
 msgstr ""
+"異なる仕訳の間で販売と配送(ピッキングリスト)を分類して、バッチ処理を実行できます。\n"
+"                sale_journalモジュールがインストールされます。"
 
 #. module: sale
 #: field:sale.order,create_date:0
@@ -820,7 +824,7 @@ msgstr "受注"
 #. module: sale
 #: selection:sale.order,order_policy:0
 msgid "On Demand"
-msgstr ""
+msgstr "オンデマンド"
 
 #. module: sale
 #: model:ir.actions.act_window,help:sale.action_shop_form
@@ -878,6 +882,8 @@ msgid ""
 "Example: Product: this product is deprecated, do not purchase more than 5.\n"
 "                Supplier: don't forget to ask for an express delivery."
 msgstr ""
+"特定の製品や特定の顧客に販売したい場合、製品に関する通知を設定してトリガすることができます。\n"
+"例として、製品：この製品は廃止されましたので5つ以上の購入はご遠慮ください。仕入先：速達便でお願いします。"
 
 #. module: sale
 #: code:addons/sale/sale.py:955
@@ -956,6 +962,8 @@ msgid ""
 "Manage Related Stock.\n"
 "                    This installs the module sale_stock."
 msgstr ""
+"異なる発注方針を使って見積書や受注の作成と関連する在庫の管理ができます。\n"
+"                    sale_stockがインストールされます。"
 
 #. module: sale
 #: model:email.template,subject:sale.email_template_edi_sale
@@ -1080,7 +1088,7 @@ msgstr "グループ化…"
 #. module: sale
 #: view:sale.config.settings:0
 msgid "Product Features"
-msgstr ""
+msgstr "製品の特長"
 
 #. module: sale
 #: selection:sale.order,state:0
@@ -1318,7 +1326,7 @@ msgstr ""
 #. module: sale
 #: field:sale.config.settings,group_sale_pricelist:0
 msgid "Use pricelists to adapt your price per customers"
-msgstr ""
+msgstr "顧客ごとに価格を適用するため価格表を使う"
 
 #. module: sale
 #: code:addons/sale/sale.py:185
@@ -1351,6 +1359,9 @@ msgid ""
 "between the Unit Price and Cost Price.\n"
 "                This installs the module sale_margin."
 msgstr ""
+"受注にマージンを追加します。\n"
+"                単価と原価の差額を計算することで収益性を示します。\n"
+"                sale_marginモジュールがインストールされます。"
 
 #. module: sale
 #: report:sale.order:0
@@ -1508,6 +1519,9 @@ msgid ""
 "Before delivery: A draft invoice is created from the sales order and must be "
 "paid before the products can be delivered."
 msgstr ""
+"オンデマンド：必要な時に受注から請求書の草案を作成できます。\n"
+"配送時；製品が納入された時に配送から請求書の草案を作成できます。\n"
+"配送前：受注から請求書の草案を作成して、製品が納入される前に支払う必要があります。"
 
 #. module: sale
 #: view:account.invoice.report:0
@@ -1691,7 +1705,7 @@ msgstr "請求待ち"
 #. module: sale
 #: view:sale.config.settings:0
 msgid "Warehouse Features"
-msgstr ""
+msgstr "倉庫の機能"
 
 #. module: sale
 #: view:sale.order.line:0
@@ -1998,7 +2012,7 @@ msgstr "進行中の受注"
 #. module: sale
 #: field:sale.config.settings,timesheet:0
 msgid "Prepare invoices based on timesheets"
-msgstr ""
+msgstr "タイムシートに基づいて請求書を準備"
 
 #. module: sale
 #: help:sale.order,origin:0
@@ -2055,7 +2069,7 @@ msgstr "受注 "
 #. module: sale
 #: field:sale.config.settings,module_account_analytic_analysis:0
 msgid "Use contracts management"
-msgstr ""
+msgstr "契約管理を使う"
 
 #. module: sale
 #: help:sale.order,invoiced:0
@@ -2144,7 +2158,7 @@ msgstr "支払条件"
 #. module: sale
 #: help:account.config.settings,module_sale_analytic_plans:0
 msgid "This allows install module sale_analytic_plans."
-msgstr ""
+msgstr "sale_analytic_plansモジュールがインストールされます。"
 
 #. module: sale
 #: model:ir.actions.act_window,help:sale.action_order_report_all

@@ -763,11 +763,23 @@ class mail_thread(osv.AbstractModel):
                     alternative = True
                 if part.get_content_maintype() == 'multipart':
                     continue  # skip container
-                filename = part.get_filename()  # None if normal part
+                # part.get_filename returns decoded value if able to decode, coded otherwise.
+                # original get_filename is not able to decode iso-8859-1 (for instance).
+                # therefore, iso encoded attachements are not able to be decoded properly with get_filename
+                # code here partially copy the original get_filename method, but handle more encoding
+                filename=part.get_param('filename', None, 'content-disposition')
+                if not filename:
+                    filename=part.get_param('name', None)
+                if filename:
+                    if isinstance(filename, tuple):
+                        # RFC2231
+                        filename=email.utils.collapse_rfc2231_value(filename).strip()
+                    else:
+                        filename=decode(filename)
                 encoding = part.get_content_charset()  # None if attachment
                 # 1) Explicit Attachments -> attachments
                 if filename or part.get('content-disposition', '').strip().startswith('attachment'):
-                    attachments.append((decode(filename) or 'attachment', part.get_payload(decode=True)))
+                    attachments.append((filename or 'attachment', part.get_payload(decode=True)))
                     continue
                 # 2) text/plain -> <pre/>
                 if part.get_content_type() == 'text/plain' and (not alternative or not body):
@@ -1183,13 +1195,15 @@ class mail_thread(osv.AbstractModel):
         if set(partner_ids) == set([user_pid]):
             try:
                 self.check_access_rights(cr, uid, 'read')
+                self.check_access_rule(cr, uid, ids, 'read')
             except (osv.except_osv, orm.except_orm):
-                return
+                return False
         else:
             self.check_access_rights(cr, uid, 'write')
+            self.check_access_rule(cr, uid, ids, 'write')
 
         existing_pids_dict = {}
-        fol_ids = mail_followers_obj.search(cr, SUPERUSER_ID, [('res_model', '=', self._name), ('res_id', 'in', ids)])
+        fol_ids = mail_followers_obj.search(cr, SUPERUSER_ID, ['&', '&', ('res_model', '=', self._name), ('res_id', 'in', ids), ('partner_id', 'in', partner_ids)])
         for fol in mail_followers_obj.browse(cr, SUPERUSER_ID, fol_ids, context=context):
             existing_pids_dict.setdefault(fol.res_id, set()).add(fol.partner_id.id)
 
@@ -1231,8 +1245,10 @@ class mail_thread(osv.AbstractModel):
         user_pid = self.pool.get('res.users').read(cr, uid, uid, ['partner_id'], context=context)['partner_id'][0]
         if set(partner_ids) == set([user_pid]):
             self.check_access_rights(cr, uid, 'read')
+            self.check_access_rule(cr, uid, ids, 'read')
         else:
             self.check_access_rights(cr, uid, 'write')
+            self.check_access_rule(cr, uid, ids, 'write')
         fol_obj = self.pool['mail.followers']
         fol_ids = fol_obj.search(
             cr, SUPERUSER_ID, [

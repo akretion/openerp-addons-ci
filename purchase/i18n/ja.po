@@ -8,19 +8,19 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-07 19:36+0000\n"
-"PO-Revision-Date: 2013-11-10 08:45+0000\n"
-"Last-Translator: Yoshi Tashiro <yostashiro@gmail.com>\n"
+"PO-Revision-Date: 2014-01-15 05:55+0000\n"
+"Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-21 06:31+0000\n"
-"X-Generator: Launchpad (build 16831)\n"
+"X-Launchpad-Export-Date: 2014-01-16 06:04+0000\n"
+"X-Generator: Launchpad (build 16901)\n"
 
 #. module: purchase
 #: model:res.groups,name:purchase.group_analytic_accounting
 msgid "Analytic Accounting for Purchases"
-msgstr ""
+msgstr "購入のための分析会計"
 
 #. module: purchase
 #: model:ir.model,name:purchase.model_account_config_settings
@@ -40,6 +40,8 @@ msgid ""
 "Example: Product: this product is deprecated, do not purchase more than 5.\n"
 "                Supplier: don't forget to ask for an express delivery."
 msgstr ""
+"特定の製品や特定の顧客から購入したい場合、製品に関する通知を設定してトリガすることができます。\n"
+"例として、製品：この製品は廃止されましたので5つ以上の購入はご遠慮ください。仕入先：速達便でお願いします。"
 
 #. module: purchase
 #: model:product.pricelist,name:purchase.list0
@@ -183,7 +185,7 @@ msgstr "発注確認"
 #. module: purchase
 #: field:purchase.config.settings,module_warning:0
 msgid "Alerts by products or supplier"
-msgstr ""
+msgstr "製品や仕入先ごとに警告"
 
 #. module: purchase
 #: field:purchase.order,name:0
@@ -206,7 +208,7 @@ msgstr "承認"
 #: help:purchase.config.settings,group_uom:0
 msgid ""
 "Allows you to select and maintain different units of measure for products."
-msgstr ""
+msgstr "製品に異なる単位の選択と維持ができます。"
 
 #. module: purchase
 #: help:purchase.order,minimum_planned_date:0
@@ -289,7 +291,7 @@ msgstr "発注"
 #: help:account.config.settings,group_analytic_account_for_purchases:0
 #: help:purchase.config.settings,group_analytic_account_for_purchases:0
 msgid "Allows you to specify an analytic account on purchase orders."
-msgstr ""
+msgstr "注文書に分析勘定を指定できます。"
 
 #. module: purchase
 #: model:ir.actions.act_window,help:purchase.action_invoice_pending
@@ -358,7 +360,7 @@ msgstr "会計ポジション"
 #. module: purchase
 #: field:purchase.config.settings,default_invoice_method:0
 msgid "Default invoicing control method"
-msgstr ""
+msgstr "デフォルトの請求管理方法"
 
 #. module: purchase
 #: model:ir.model,name:purchase.model_stock_picking_in
@@ -476,6 +478,7 @@ msgid ""
 "used to do the matching when you receive the products as this reference is "
 "usually written on the delivery order sent by your supplier."
 msgstr ""
+"仕入先から送られる受注や見積りの参照です。通常、この参照は仕入先から送られる配送伝票に書かれているため、主に製品を受け取る際の照合に使用します。"
 
 #. module: purchase
 #: view:purchase.config.settings:0
@@ -744,7 +747,7 @@ msgstr "発注日"
 #. module: purchase
 #: field:purchase.config.settings,group_uom:0
 msgid "Manage different units of measure for products"
-msgstr ""
+msgstr "異なる製品の単位を管理"
 
 #. module: purchase
 #: model:process.node,name:purchase.process_node_invoiceafterpacking0
@@ -864,7 +867,7 @@ msgstr "本当にこれらのオーダーを集約しますか？"
 #. module: purchase
 #: field:account.config.settings,module_purchase_analytic_plans:0
 msgid "Use multiple analytic accounts on orders"
-msgstr ""
+msgstr "発注で複数の分析勘定を使用"
 
 #. module: purchase
 #: view:product.product:0
@@ -889,7 +892,7 @@ msgstr "検証日数"
 #. module: purchase
 #: view:purchase.config.settings:0
 msgid "Supplier Features"
-msgstr ""
+msgstr "仕入先の特徴"
 
 #. module: purchase
 #: report:purchase.order:0
@@ -958,7 +961,7 @@ msgstr ""
 #: field:account.config.settings,group_analytic_account_for_purchases:0
 #: field:purchase.config.settings,group_analytic_account_for_purchases:0
 msgid "Analytic accounting for purchases"
-msgstr ""
+msgstr "購入のための分析会計"
 
 #. module: purchase
 #: model:process.transition,note:purchase.process_transition_confirmingpurchaseorder1
@@ -974,6 +977,8 @@ msgid ""
 "                Example: 10% for retailers, promotion of 5 EUR on this "
 "product, etc."
 msgstr ""
+"仕入先のカテゴリ別のルールに基づいて異なる価格を管理できます。\n"
+"例：小売業者に対して10%や5 EURの奨励など。"
 
 #. module: purchase
 #: model:ir.model,name:purchase.model_mail_mail
@@ -1019,7 +1024,7 @@ msgstr "単位"
 #. module: purchase
 #: field:purchase.config.settings,group_purchase_pricelist:0
 msgid "Manage pricelist per supplier"
-msgstr ""
+msgstr "仕入先ごとに価格表を管理"
 
 #. module: purchase
 #: view:board.board:0
@@ -1090,7 +1095,7 @@ msgstr "注記"
 #. module: purchase
 #: field:purchase.config.settings,module_purchase_requisition:0
 msgid "Manage purchase requisitions"
-msgstr ""
+msgstr "購買依頼を管理"
 
 #. module: purchase
 #: report:purchase.order:0
@@ -1342,7 +1347,7 @@ msgstr ""
 #. module: purchase
 #: help:purchase.config.settings,group_costing_method:0
 msgid "Allows you to compute product cost price based on average cost."
-msgstr ""
+msgstr "平均原価に基づいて製品原価を計算できます。"
 
 #. module: purchase
 #: model:ir.actions.act_window,name:purchase.action_purchase_configuration
@@ -1381,7 +1386,7 @@ msgstr ""
 #. module: purchase
 #: field:purchase.config.settings,module_purchase_double_validation:0
 msgid "Force two levels of approvals"
-msgstr ""
+msgstr "承認には2つのレベルを強制"
 
 #. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_product_pricelist_action2_purchase_type
@@ -1480,7 +1485,7 @@ msgstr "オーダーの集約"
 #. module: purchase
 #: field:purchase.config.settings,module_purchase_analytic_plans:0
 msgid "Use multiple analytic accounts on purchase orders"
-msgstr ""
+msgstr "発注で複数の分析勘定を使用"
 
 #. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_procurement_management
@@ -1503,7 +1508,7 @@ msgstr "手動で修正"
 #. module: purchase
 #: field:purchase.config.settings,group_costing_method:0
 msgid "Compute product cost price based on average cost"
-msgstr ""
+msgstr "平均原価に基づいて製品原価を計算"
 
 #. module: purchase
 #: code:addons/purchase/purchase.py:352
@@ -1600,6 +1605,8 @@ msgid ""
 "lines on a purchase order between several accounts and analytic plans.\n"
 "                This installs the module purchase_analytic_plans."
 msgstr ""
+"複数の分析計画を維持できます。これらは複数の口座間の注文明細の分割と分析の計画をします。\n"
+"                purchase_analytic_plansモジュールがインストールされます。"
 
 #. module: purchase
 #: field:purchase.order,location_id:0
@@ -1794,6 +1801,8 @@ msgid ""
 "            to one supplier or if you want a purchase requisition to "
 "negotiate with several suppliers."
 msgstr ""
+"購買依頼は複数の調達先から製品セットの見積書を要求する場合に使用します。\n"
+"            ひとつの調達先に直接に見積要求する場合や複数の調達先と交渉するため購買依頼する場合、製品ごとに設定できます。"
 
 #. module: purchase
 #: field:purchase.order.line,invoice_lines:0
@@ -1842,6 +1851,8 @@ msgid ""
 "amount.\n"
 "                This installs the module purchase_double_validation."
 msgstr ""
+"最小量を超える購入のため二重の検証メカニズムを提供します。\n"
+"                purchase_double_validationモジュールがインストールされます。"
 
 #. module: purchase
 #: code:addons/purchase/edi/purchase_order.py:132
@@ -1975,6 +1986,9 @@ msgid ""
 "Bases on incoming shipments: let you create an invoice when receptions are "
 "validated."
 msgstr ""
+"発注明細基準：請求書を作成して「請求書管理 > 発注明細基準」で個々の明細を配置します。\n"
+"請求書生成基準：請求書の草案を作成して、後で検証できます。\n"
+"入荷基準：受領が検証できたときに請求書を作成します。"
 
 #. module: purchase
 #: model:ir.ui.menu,name:purchase.menu_partner_categories_in_form
@@ -1994,7 +2008,7 @@ msgstr "見積依頼番号"
 #. module: purchase
 #: view:purchase.config.settings:0
 msgid "Invoicing Settings"
-msgstr ""
+msgstr "請求の設定"
 
 #. module: purchase
 #: model:ir.actions.act_window,name:purchase.action_purchase_order_by_user_all

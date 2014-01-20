@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-07 19:36+0000\n"
-"PO-Revision-Date: 2013-11-22 06:15+0000\n"
-"Last-Translator: Yoshi Tashiro <yostashiro@gmail.com>\n"
+"PO-Revision-Date: 2014-01-14 08:21+0000\n"
+"Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2013-11-23 06:26+0000\n"
-"X-Generator: Launchpad (build 16831)\n"
+"X-Launchpad-Export-Date: 2014-01-15 06:21+0000\n"
+"X-Generator: Launchpad (build 16890)\n"
 
 #. module: mail
 #: view:mail.followers:0
@@ -48,7 +48,7 @@ msgstr "メッセージの受取人"
 #. module: mail
 #: help:mail.message.subtype,default:0
 msgid "Activated by default when subscribing."
-msgstr ""
+msgstr "購読するときはデフォルトで活性化されます。"
 
 #. module: mail
 #: view:mail.message:0
@@ -127,7 +127,7 @@ msgstr ""
 msgid ""
 "Email address of the sender. This field is set when no matching partner is "
 "found for incoming emails."
-msgstr ""
+msgstr "送信者のメールアドレス。このフィールドは受信メールに一致する取引先が見つからない場合に設定されます。"
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_compose_message
@@ -151,7 +151,7 @@ msgstr "フォロワー追加"
 #. module: mail
 #: field:mail.message.subtype,parent_id:0
 msgid "Parent"
-msgstr ""
+msgstr "親"
 
 #. module: mail
 #: help:res.partner,notification_email_send:0
@@ -163,6 +163,11 @@ msgid ""
 "discussions\n"
 "- All Messages: for every notification you receive in your Inbox"
 msgstr ""
+"あなたの受信トレイに新しいメッセージを受信するためのポリシー\n"
+"- 通知なし：メールは送信されません\n"
+"- 受信メールのみ：メールを介してシステムが受信したメッセージ\n"
+"- 受信メールとディスカッション：内部の議論とともに受信したメール\n"
+"- すべてのメッセージ：受信トレイに受信したすべての通知"
 
 #. module: mail
 #: field:mail.group,message_unread:0
@@ -315,7 +320,7 @@ msgstr "フォロワーを追加"
 msgid ""
 "Author of the message. If not set, email_from may hold an email address that "
 "did not match any partner."
-msgstr ""
+msgstr "メッセージの作成者。設定されない場合、email_fromはどの取引先とも一致しないメールアドレスを保持します。"
 
 #. module: mail
 #. openerp-web
@@ -338,7 +343,7 @@ msgstr ""
 msgid ""
 "Message type: email for email message, notification for system message, "
 "comment for other messages such as user replies"
-msgstr ""
+msgstr "メッセージの種類：電子メールメッセージのメール、システムメッセージの通知、ユーザ返信など他のメッセージのコメント"
 
 #. module: mail
 #: help:mail.message.subtype,relation_field:0
@@ -347,6 +352,8 @@ msgid ""
 "automatic subscription on a related document. The field is used to compute "
 "getattr(related_document.relation_field)."
 msgstr ""
+"関連文書を自動購読する場合、関連モデルをサブタイプのモデルにリンクするためのフィールド。このフィールドはgetattr(related_document."
+"relation_field)の計算に使われます。"
 
 #. module: mail
 #: selection:mail.mail,state:0
@@ -480,7 +487,7 @@ msgstr ""
 #. module: mail
 #: field:mail.message.subtype,relation_field:0
 msgid "Relation field"
-msgstr ""
+msgstr "関連フィールド"
 
 #. module: mail
 #: selection:mail.compose.message,type:0
@@ -796,7 +803,7 @@ msgstr ""
 #: help:mail.followers,res_model:0
 #: help:mail.wizard.invite,res_model:0
 msgid "Model of the followed resource"
-msgstr ""
+msgstr "追従するリソースのモデル"
 
 #. module: mail
 #. openerp-web
@@ -828,7 +835,7 @@ msgstr "自分のフォロワーとシェア..."
 #. module: mail
 #: field:mail.notification,partner_id:0
 msgid "Contact"
-msgstr ""
+msgstr "連絡先"
 
 #. module: mail
 #: view:mail.group:0
@@ -865,12 +872,12 @@ msgstr ""
 msgid ""
 "A Python dictionary that will be evaluated to provide default values when "
 "creating new records for this alias."
-msgstr ""
+msgstr "このエイリアスの新しいレコードを作成する時にデフォルト値を与えるためのPython辞書です。"
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_message_subtype
 msgid "Message subtypes"
-msgstr ""
+msgstr "メッセージのサブタイプ"
 
 #. module: mail
 #. openerp-web
@@ -970,7 +977,7 @@ msgstr "子メッセージ"
 #. module: mail
 #: field:mail.alias,alias_user_id:0
 msgid "Owner"
-msgstr ""
+msgstr "所有者"
 
 #. module: mail
 #: code:addons/mail/res_partner.py:52
@@ -991,7 +998,7 @@ msgstr "メッセージ"
 #: help:mail.followers,res_id:0
 #: help:mail.wizard.invite,res_id:0
 msgid "Id of the followed resource"
-msgstr ""
+msgstr "追従するリソースのID"
 
 #. module: mail
 #: field:mail.compose.message,body:0
@@ -1010,7 +1017,7 @@ msgstr "エイリアス"
 msgid ""
 "Description that will be added in the message posted for this subtype. If "
 "void, the name will be added instead."
-msgstr ""
+msgstr "このサブタイプのために投稿したメッセージに追加される説明です。"
 
 #. module: mail
 #: field:mail.compose.message,vote_user_ids:0
@@ -1141,7 +1148,7 @@ msgid ""
 "Optional ID of a thread (record) to which all incoming messages will be "
 "attached, even if they did not reply to it. If set, this will disable the "
 "creation of new records completely."
-msgstr ""
+msgstr "すべての受信メッセージに添付されるスレッド(レコード)のオプションIDです。設定した場合は新しいレコードの作成を無効にします。"
 
 #. module: mail
 #. openerp-web
@@ -1159,6 +1166,8 @@ msgid ""
 "subtypes allow to precisely tune the notifications the user want to receive "
 "on its wall."
 msgstr ""
+"メッセージのサブタイプはメッセージ、特にシステム通知に対してより正確なタイプを与えます。たとえば、新規レコード(新規)またはプロセスのステージ変更(ステー"
+"ジ変更)に関連する通知ができます。メッセージのサブタイプはユーザがウォールで受信したい通知を正確にチューンできます。"
 
 #. module: mail
 #: field:res.partner,notification_email_send:0
@@ -1243,7 +1252,7 @@ msgstr ""
 #. module: mail
 #: field:mail.message.subtype,default:0
 msgid "Default"
-msgstr ""
+msgstr "デフォルト"
 
 #. module: mail
 #: model:ir.model,name:mail.model_res_users
@@ -1260,7 +1269,7 @@ msgstr ""
 #. module: mail
 #: help:mail.message.subtype,parent_id:0
 msgid "Parent subtype, used for automatic subscription."
-msgstr ""
+msgstr "自動購読で使用する親サブタイプ"
 
 #. module: mail
 #: field:mail.group,message_summary:0
@@ -1292,7 +1301,7 @@ msgstr ""
 #: field:mail.message,starred:0
 #: field:mail.notification,starred:0
 msgid "Starred"
-msgstr ""
+msgstr "スター付き"
 
 #. module: mail
 #: field:mail.group,menu_id:0
@@ -1326,6 +1335,8 @@ msgid ""
 "the sender (From) address, or will use the Administrator account if no "
 "system user is found for that address."
 msgstr ""
+"このエイリアスに電子メールを受信した時に作成されるレコードの所有者。このフィールドが設定されない場合、システムは送信者(From)アドレスに基づいた適切な"
+"所有者を見つけるか、見つからなければ管理者アカウントを使用します。"
 
 #. module: mail
 #. openerp-web
@@ -1374,7 +1385,7 @@ msgstr "写し(CC)"
 #. module: mail
 #: help:mail.notification,starred:0
 msgid "Starred message that goes into the todo mailbox"
-msgstr ""
+msgstr "ToDoメールボックスに入るスター付きメッセージ"
 
 #. module: mail
 #: view:mail.group:0
@@ -1447,7 +1458,7 @@ msgstr "作成月"
 #: help:mail.message,notified_partner_ids:0
 msgid ""
 "Partners that have a notification pushing this message in their mailboxes"
-msgstr ""
+msgstr "メールボックスのメッセージをプッシュ通知した取引先"
 
 #. module: mail
 #: view:mail.message:0
@@ -1476,7 +1487,7 @@ msgstr "返信"
 #: field:mail.compose.message,notified_partner_ids:0
 #: field:mail.message,notified_partner_ids:0
 msgid "Notified partners"
-msgstr ""
+msgstr "通知された取引先"
 
 #. module: mail
 #. openerp-web
@@ -1500,7 +1511,7 @@ msgstr "役員会"
 #. module: mail
 #: field:mail.alias,alias_model_id:0
 msgid "Aliased Model"
-msgstr ""
+msgstr "エイリアスするモデル"
 
 #. module: mail
 #: help:mail.compose.message,message_id:0
@@ -1512,7 +1523,7 @@ msgstr "メッセージ識別番号"
 #: field:mail.group,description:0
 #: field:mail.message.subtype,description:0
 msgid "Description"
-msgstr ""
+msgstr "説明"
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_followers
@@ -1699,7 +1710,7 @@ msgstr "メッセージング"
 #: view:mail.alias:0
 #: field:mail.message.subtype,res_model:0
 msgid "Model"
-msgstr ""
+msgstr "モデル"
 
 #. module: mail
 #. openerp-web
@@ -1713,7 +1724,7 @@ msgstr "メッセージがありません。"
 msgid ""
 "Message subtypes followed, meaning subtypes that will be pushed onto the "
 "user's Wall."
-msgstr ""
+msgstr "追従するメッセージのサブタイプはユーザのウォールにプッシュされるサブタイプを意味します。"
 
 #. module: mail
 #: help:mail.group,message_ids:0
@@ -1736,7 +1747,7 @@ msgstr ""
 #: help:mail.message.subtype,res_model:0
 msgid ""
 "Model the subtype applies to. If False, this subtype applies to all models."
-msgstr ""
+msgstr "サブタイプが適用されるモデルです。そうでない場合、このサブタイプはすべてのモデルに適用されます。"
 
 #. module: mail
 #. openerp-web
@@ -1799,7 +1810,7 @@ msgstr ""
 #: help:mail.compose.message,parent_id:0
 #: help:mail.message,parent_id:0
 msgid "Initial thread message."
-msgstr ""
+msgstr "初期スレッドメッセージ"
 
 #. module: mail
 #: model:mail.group,name:mail.group_hr_policies
@@ -1835,7 +1846,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:mail.action_view_message_subtype
 #: model:ir.ui.menu,name:mail.menu_message_subtype
 msgid "Subtypes"
-msgstr ""
+msgstr "サブタイプ"
 
 #. module: mail
 #: model:ir.model,name:mail.model_mail_alias
