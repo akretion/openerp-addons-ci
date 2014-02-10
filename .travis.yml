@@ -23,6 +23,7 @@ script:
 notifications:
   email:
     - raphael.valyi@akretion.com
+    - renato.lima@akretion.com.br
 
 branches:
   only:
