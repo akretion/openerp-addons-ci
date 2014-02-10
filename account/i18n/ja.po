@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-14 22:29+0000\n"
-"PO-Revision-Date: 2014-01-18 15:46+0000\n"
-"Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
+"PO-Revision-Date: 2014-02-08 08:41+0000\n"
+"Last-Translator: Yoshi Tashiro <yostashiro@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-19 05:58+0000\n"
-"X-Generator: Launchpad (build 16901)\n"
+"X-Launchpad-Export-Date: 2014-02-09 06:50+0000\n"
+"X-Generator: Launchpad (build 16916)\n"
 
 #. module: account
 #: model:process.transition,name:account.process_transition_supplierreconcilepaid0
@@ -477,7 +477,7 @@ msgstr "チャートテンプレート"
 #. module: account
 #: selection:account.invoice.refund,filter_refund:0
 msgid "Modify: create refund, reconcile and create a new draft invoice"
-msgstr ""
+msgstr "変更：払い戻しを作成して、消し込みと新たなドラフト請求書を作成"
 
 #. module: account
 #: help:account.config.settings,tax_calculation_rounding_method:0
@@ -675,7 +675,7 @@ msgstr "税マッピング"
 #. module: account
 #: report:account.central.journal:0
 msgid "Centralized Journal"
-msgstr "一元化仕訳帳"
+msgstr "仕訳帳別勘定サマリ"
 
 #. module: account
 #: sql_constraint:account.sequence.fiscalyear:0
@@ -844,7 +844,7 @@ msgstr "請求書印刷"
 msgid ""
 "Cannot %s invoice which is already reconciled, invoice should be "
 "unreconciled first. You can only refund this invoice."
-msgstr ""
+msgstr "すでに消し込みされている請求書は %s できないため、最初に未消し込みにする必要があります。請求の払い戻しのみできます。"
 
 #. module: account
 #: view:account.account:0
@@ -957,7 +957,7 @@ msgstr "Eメールで送信"
 msgid ""
 "Print Report with the currency column if the currency differs from the "
 "company currency."
-msgstr ""
+msgstr "会社の通貨と異なる場合は通貨欄を使用してレポートを印刷します。"
 
 #. module: account
 #: report:account.analytic.account.quantity_cost_ledger:0
@@ -1059,7 +1059,7 @@ msgstr "仕入仕訳帳"
 #. module: account
 #: model:mail.message.subtype,description:account.mt_invoice_paid
 msgid "Invoice paid"
-msgstr ""
+msgstr "請求書支払い"
 
 #. module: account
 #: view:validate.account.move:0
@@ -1107,7 +1107,7 @@ msgstr "拡張フィルタ…"
 #. module: account
 #: model:ir.ui.menu,name:account.menu_account_central_journal
 msgid "Centralizing Journal"
-msgstr "仕訳帳の一元化"
+msgstr "仕訳帳別勘定サマリ"
 
 #. module: account
 #: selection:account.journal,type:0
@@ -1164,7 +1164,7 @@ msgstr "コード"
 #. module: account
 #: view:account.config.settings:0
 msgid "Features"
-msgstr ""
+msgstr "機能"
 
 #. module: account
 #: code:addons/account/account.py:2346
@@ -1204,7 +1204,7 @@ msgstr ""
 #. module: account
 #: field:account.bank.accounts.wizard,acc_name:0
 msgid "Account Name."
-msgstr "アカウント名"
+msgstr "勘定科目名"
 
 #. module: account
 #: field:account.journal,with_last_closing_balance:0
@@ -1216,7 +1216,7 @@ msgstr "前回の期末残高で開始"
 msgid ""
 "Check this box if you don't want any tax related to this tax code to appear "
 "on invoices"
-msgstr ""
+msgstr "請求書に表示される税コードに関連する税を必要としない場合は、このボックスをチェックします。"
 
 #. module: account
 #: field:report.account.receivable,name:0
@@ -1988,7 +1988,7 @@ msgstr "支払指図を管理"
 #. module: account
 #: view:account.period:0
 msgid "Duration"
-msgstr ""
+msgstr "期間"
 
 #. module: account
 #: view:account.bank.statement:0
@@ -2026,7 +2026,7 @@ msgstr "顧客の参照："
 #: help:account.tax.template,ref_tax_code_id:0
 #: help:account.tax.template,tax_code_id:0
 msgid "Use this code for the tax declaration."
-msgstr ""
+msgstr "このコードは税申告のために使用します。"
 
 #. module: account
 #: help:account.period,special:0
@@ -2041,7 +2041,7 @@ msgstr "ドラフト取引明細書"
 #. module: account
 #: model:mail.message.subtype,description:account.mt_invoice_validated
 msgid "Invoice validated"
-msgstr ""
+msgstr "請求書検証"
 
 #. module: account
 #: field:account.config.settings,module_account_check_writing:0
@@ -2292,7 +2292,7 @@ msgstr "アカウント年齢試算表レポート"
 #. module: account
 #: view:account.fiscalyear.close.state:0
 msgid "Close Fiscal Year"
-msgstr ""
+msgstr "会計年度を閉じる"
 
 #. module: account
 #. openerp-web
@@ -2484,7 +2484,7 @@ msgstr ""
 #. module: account
 #: model:res.groups,name:account.group_supplier_inv_check_total
 msgid "Check Total on supplier invoices"
-msgstr ""
+msgstr "仕入先請求書の合計を確認"
 
 #. module: account
 #: selection:account.invoice,state:0
@@ -3137,7 +3137,7 @@ msgstr ""
 msgid ""
 "Set the account that will be set by default on invoice tax lines for "
 "invoices. Leave empty to use the expense account."
-msgstr ""
+msgstr "請求書の税明細にデフォルトで設定される勘定を設定します。交際費で使用する場合は空白のままにします。"
 
 #. module: account
 #: field:account.config.settings,sale_journal_id:0
@@ -3863,7 +3863,7 @@ msgid ""
 "                                    waiting for the document to be issued "
 "by\n"
 "                                    your supplier/customer."
-msgstr ""
+msgstr "仕入先/顧客が文書を発行するのを待って、この貸方票を直接または草案にして編集と検証ができます。"
 
 #. module: account
 #: view:validate.account.move.lines:0
@@ -3955,7 +3955,7 @@ msgstr "ドラフト請求書"
 #. module: account
 #: view:account.config.settings:0
 msgid "Options"
-msgstr ""
+msgstr "オプション"
 
 #. module: account
 #: field:account.aged.trial.balance,period_length:0
@@ -4196,7 +4196,7 @@ msgstr "適用可能コード（タイプがコードの時）"
 msgid ""
 "When monthly periods are created. The status is 'Draft'. At the end of "
 "monthly period it is in 'Done' status."
-msgstr ""
+msgstr "毎月の期間が作成されると、ステータスは「ドラフト」です。毎月の期間の終りには「完了」状態になります。"
 
 #. module: account
 #: view:account.invoice.report:0
@@ -4357,7 +4357,7 @@ msgstr "選択された会計年度、期間、または勘定科目表は同じ
 msgid ""
 "Check this box if you don't want any tax related to this tax Code to appear "
 "on invoices."
-msgstr ""
+msgstr "請求書に表示される税コードに関連する税を必要としない場合は、このボックスをチェックします。"
 
 #. module: account
 #: code:addons/account/account_move_line.py:1058
@@ -4813,7 +4813,7 @@ msgstr "内部注記を追加..."
 #. module: account
 #: model:ir.actions.act_window,name:account.action_wizard_multi_chart
 msgid "Set Your Accounting Options"
-msgstr ""
+msgstr "会計オプションを設定"
 
 #. module: account
 #: model:ir.model,name:account.model_account_chart
@@ -4834,7 +4834,7 @@ msgstr "メインタイトル1（太字、アンダーライン）"
 #: report:account.analytic.account.balance:0
 #: report:account.central.journal:0
 msgid "Account Name"
-msgstr "アカウント名"
+msgstr "勘定科目名"
 
 #. module: account
 #: help:account.fiscalyear.close,report_name:0
@@ -5038,7 +5038,7 @@ msgstr ""
 msgid ""
 "It adds the currency column on report if the currency differs from the "
 "company currency."
-msgstr ""
+msgstr "会社の通貨と異なる場合はレポートに通貨欄を追加します。"
 
 #. module: account
 #: code:addons/account/account.py:3394
@@ -5361,7 +5361,7 @@ msgstr "このビューから財務分析を行います。これは期間毎に
 #. module: account
 #: model:res.groups,name:account.group_account_manager
 msgid "Financial Manager"
-msgstr ""
+msgstr "財務管理者"
 
 #. module: account
 #: field:account.journal,group_invoice_lines:0
@@ -6202,7 +6202,7 @@ msgstr ""
 #. module: account
 #: report:account.analytic.account.journal:0
 msgid "Account n°"
-msgstr "アカウント番号"
+msgstr "勘定科目"
 
 #. module: account
 #: code:addons/account/account_invoice.py:95
@@ -6365,6 +6365,8 @@ msgid ""
 "created by the system on document validation (invoices, bank statements...) "
 "and will be created in 'Posted' status."
 msgstr ""
+"通常、マニュアルで作成されたすべての新しい仕訳は「未転記」状態ですが、関連する仕訳でその状態をスキップするためのオプションを設定できます。その場合、ドキュ"
+"メント検証システムによって請求書や銀行取引明細書などの仕訳は自動で作成され、「転記」状態になります。"
 
 #. module: account
 #: field:account.payment.term.line,days:0
@@ -7227,7 +7229,7 @@ msgstr "手動"
 #. module: account
 #: selection:account.invoice.refund,filter_refund:0
 msgid "Cancel: create refund and reconcile"
-msgstr ""
+msgstr "キャンセル：払い戻しと消し込みを作成"
 
 #. module: account
 #: code:addons/account/wizard/account_report_aged_partner_balance.py:58
@@ -7281,7 +7283,7 @@ msgstr ""
 #. module: account
 #: help:account.partner.ledger,page_split:0
 msgid "Display Ledger Report with One partner per page"
-msgstr ""
+msgstr "元帳レポートはページごとにひとつの取引先を表示"
 
 #. module: account
 #: report:account.general.ledger:0
@@ -7816,6 +7818,7 @@ msgid ""
 "                                    with the invoice. You will not be able "
 "to modify the credit note."
 msgstr ""
+"発行すべきでなかった請求書をキャンセルしたい場合は、このオプションを使用します。貸方票が作成、検証され、請求書と消し込みされます。貸方票は変更できません。"
 
 #. module: account
 #: help:account.partner.reconcile.process,next_partner_id:0
@@ -8742,6 +8745,8 @@ msgid ""
 "invoice will be created \n"
 "                                    so that you can edit it."
 msgstr ""
+"請求書をキャンセルして新しいものを作成したい場合は、このオプションを使用します。貸方票が作成、検証され、現在の請求書と消し込みされます。編集可能な新しいド"
+"ラフト請求書が作成されます。"
 
 #. module: account
 #: model:process.transition,name:account.process_transition_filestatement0
@@ -8962,7 +8967,7 @@ msgid ""
 "This option allows you to get more details about the way your balances are "
 "computed. Because it is space consuming, we do not allow to use it while "
 "doing a comparison."
-msgstr ""
+msgstr "このオプションは残高の計算方法について多くの詳細が得られます。スペースを消費するため、比較しながらの使用はできません。"
 
 #. module: account
 #: model:ir.model,name:account.model_account_fiscalyear_close
@@ -9457,6 +9462,11 @@ msgid ""
 "related journal entries may or may not be reconciled.             \n"
 "* The 'Cancelled' status is used when user cancel invoice."
 msgstr ""
+" *「ドラフト」状態はユーザーが新しくコード化されて請求書が未確認の場合に使用されます。\n"
+"* 請求が「試算」状態の場合、請求書は請求番号を持ちません。\n"
+"*「オープン」状態はユーザーが請求書を作成する場合に使用され、請求番号が生成されます。ユーザーが請求を支払うまでは、この状態です。\n"
+"*「支払済」状態は請求の支払いがあると自動で設定されます。関連する仕訳記入が消し込みされるとは限りません。\n"
+"*「キャンセル済」状態はユーザーが請求をキャンセルした場合に使用されます。"
 
 #. module: account
 #: field:account.period,date_stop:0
@@ -9711,7 +9721,7 @@ msgstr "日付 / 期間"
 #. module: account
 #: report:account.central.journal:0
 msgid "A/C No."
-msgstr "アカウント番号"
+msgstr "勘定科目"
 
 #. module: account
 #: model:ir.actions.act_window,name:account.act_account_journal_2_account_bank_statement
@@ -9736,7 +9746,7 @@ msgstr ""
 msgid ""
 "Set the account that will be set by default on invoice tax lines for "
 "refunds. Leave empty to use the expense account."
-msgstr ""
+msgstr "払い戻しの税明細にデフォルトで設定される勘定を設定します。交際費で使用する場合は空白のままにします。"
 
 #. module: account
 #: help:account.addtmpl.wizard,cparent_id:0
@@ -9769,7 +9779,7 @@ msgstr ""
 msgid ""
 "This field contains the information related to the numbering of the journal "
 "entries of this journal."
-msgstr ""
+msgstr "このフィールドは仕訳帳の記帳番号に関連する情報を含みます。"
 
 #. module: account
 #: field:account.invoice,sent:0
@@ -10160,7 +10170,7 @@ msgstr "ドラフト請求書 "
 #. module: account
 #: model:ir.ui.menu,name:account.menu_account_general_journal
 msgid "General Journals"
-msgstr "一般仕訳帳"
+msgstr "期間別仕訳帳サマリ"
 
 #. module: account
 #: view:account.model:0
@@ -10331,7 +10341,7 @@ msgstr "内部タイプ"
 #. module: account
 #: field:account.subscription.generate,date:0
 msgid "Generate Entries Before"
-msgstr ""
+msgstr "以前のエントリー生成"
 
 #. module: account
 #: model:ir.actions.act_window,name:account.action_subscription_form_running
@@ -10521,7 +10531,7 @@ msgstr "満期日"
 #: field:cash.box.in,name:0
 #: field:cash.box.out,name:0
 msgid "Reason"
-msgstr ""
+msgstr "理由"
 
 #. module: account
 #: selection:account.partner.ledger,filter:0

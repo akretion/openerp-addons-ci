@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-07 19:36+0000\n"
-"PO-Revision-Date: 2014-01-18 16:11+0000\n"
-"Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
+"PO-Revision-Date: 2014-02-07 14:51+0000\n"
+"Last-Translator: Yoshi Tashiro <yostashiro@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-19 05:59+0000\n"
-"X-Generator: Launchpad (build 16901)\n"
+"X-Launchpad-Export-Date: 2014-02-08 07:16+0000\n"
+"X-Generator: Launchpad (build 16916)\n"
 
 #. module: sale
 #: model:ir.model,name:sale.model_account_config_settings
@@ -97,6 +97,8 @@ msgid ""
 "The 'Waiting Schedule' status is set when the invoice is confirmed           "
 "    but waiting for the scheduler to run on the order date."
 msgstr ""
+"見積りや受注の状態を表示します。請求書の検証(請求例外)やピッキングリストの処理(出荷例外)でキャンセル操作が発生すると、\n"
+"例外状態は自動で設定されます。請求書は確認されたが注文日に実行するためスケジューラを待っている場合は「スケジュール待ち」状態が設定されます。"
 
 #. module: sale
 #: view:sale.report:0
@@ -158,7 +160,7 @@ msgstr "異なる単位の使用を許可"
 #. module: sale
 #: selection:sale.advance.payment.inv,advance_payment_method:0
 msgid "Percentage"
-msgstr ""
+msgstr "パーセント"
 
 #. module: sale
 #: report:sale.order:0
@@ -196,6 +198,9 @@ msgid ""
 "user-wise as well as month wise.\n"
 "                This installs the module account_analytic_analysis."
 msgstr ""
+"サービス会社のプロジェクト管理者に重要なデータを見せるため勘定分析ビューを修正します。\n"
+"                また月単位と同様にユーザー単位で勘定分析の要約レポートを表示できます。\n"
+"                account_analytic_analysisモジュールがインストールされます。"
 
 #. module: sale
 #: selection:sale.order,invoice_quantity:0
@@ -262,7 +267,7 @@ msgstr "割引（%）"
 #. module: sale
 #: view:sale.order.line.make.invoice:0
 msgid "Create & View Invoice"
-msgstr ""
+msgstr "請求書の作成と表示"
 
 #. module: sale
 #: view:board.board:0
@@ -370,6 +375,12 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして、受注に変換可能な見積りを作成します。\n"
+"              </p><p>\n"
+"                OpenERPは見積り、受注、配送、請求、支払いといった販売の流れを効率的に処理します。\n"
+"              </p>\n"
+"            "
 
 #. module: sale
 #: view:sale.order.line.make.invoice:0
@@ -388,7 +399,7 @@ msgstr ""
 #. module: sale
 #: view:sale.order:0
 msgid "View Invoice"
-msgstr ""
+msgstr "請求書を表示"
 
 #. module: sale
 #: code:addons/sale/wizard/sale_make_invoice_advance.py:113
@@ -490,7 +501,7 @@ msgstr ""
 #. module: sale
 #: selection:sale.order,order_policy:0
 msgid "Before Delivery"
-msgstr ""
+msgstr "配送前"
 
 #. module: sale
 #: code:addons/sale/sale.py:781
@@ -555,7 +566,7 @@ msgstr "割当取引先"
 #. module: sale
 #: model:ir.actions.act_window,name:sale.action_view_sale_advance_payment_inv
 msgid "Invoice Order"
-msgstr ""
+msgstr "受注請求"
 
 #. module: sale
 #: selection:sale.report,month:0
@@ -749,7 +760,7 @@ msgstr "出荷済"
 #. module: sale
 #: view:sale.advance.payment.inv:0
 msgid "Create and View Invoice"
-msgstr ""
+msgstr "請求書の作成と表示"
 
 #. module: sale
 #: report:sale.order:0
@@ -813,6 +824,14 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして、この顧客の見積りや受注を作成します。\n"
+"              </p><p>\n"
+"                OpenERPは見積り、受注、配送、請求、支払いといった販売の流れを効率的に処理します。\n"
+"              </p><p>\n"
+"                ソーシャル機能は各受注におけるディスカッションを整理して、顧客が受注の進展を追跡できるようにします。\n"
+"              </p>\n"
+"            "
 
 #. module: sale
 #: model:ir.actions.act_window,name:sale.action_orders
@@ -1025,7 +1044,7 @@ msgstr ""
 #. module: sale
 #: view:sale.order:0
 msgid "New Copy of Quotation"
-msgstr ""
+msgstr "見積新規コピー"
 
 #. module: sale
 #: field:res.partner,sale_order_count:0
@@ -1041,7 +1060,7 @@ msgstr "'%s'状態の受注明細は削除できません。"
 #. module: sale
 #: model:res.groups,name:sale.group_mrp_properties
 msgid "Properties on lines"
-msgstr ""
+msgstr "明細の属性"
 
 #. module: sale
 #: code:addons/sale/sale.py:865
@@ -1230,7 +1249,7 @@ msgstr "7月"
 msgid ""
 "After clicking 'Show Lines to Invoice', select lines to invoice and create "
 "the invoice from the 'More' dropdown menu."
-msgstr ""
+msgstr "「請求の明細を表示」をクリックした後、「詳細」ドロップダウンメニューから請求の明細を選択して請求書を作成します。"
 
 #. module: sale
 #: view:sale.order:0
@@ -1251,7 +1270,7 @@ msgstr "請求書のグループ化"
 #. module: sale
 #: view:sale.config.settings:0
 msgid "Contracts Management"
-msgstr ""
+msgstr "契約管理"
 
 #. module: sale
 #: view:sale.report:0
@@ -1538,7 +1557,7 @@ msgstr "請求対象"
 #. module: sale
 #: selection:sale.advance.payment.inv,advance_payment_method:0
 msgid "Fixed price (deposit)"
-msgstr ""
+msgstr "固定価格 (保証金)"
 
 #. module: sale
 #: report:sale.order:0
@@ -1589,7 +1608,7 @@ msgstr ""
 #. module: sale
 #: selection:sale.advance.payment.inv,advance_payment_method:0
 msgid "Some order lines"
-msgstr ""
+msgstr "いくつかの受注明細"
 
 #. module: sale
 #: view:res.partner:0
@@ -1599,7 +1618,7 @@ msgstr ""
 #. module: sale
 #: model:res.groups,name:sale.group_discount_per_so_line
 msgid "Discount on lines"
-msgstr ""
+msgstr "明細の値引き"
 
 #. module: sale
 #: field:sale.order,client_order_ref:0
@@ -1618,7 +1637,7 @@ msgid ""
 "Select how you want to invoice this order. This\n"
 "                        will create a draft invoice that can be modified\n"
 "                        before validation."
-msgstr ""
+msgstr "この注文の請求方法を選択してください。検証の前に修正ができるドラフト請求書を作成します。"
 
 #. module: sale
 #: view:board.board:0
@@ -1642,6 +1661,12 @@ msgid ""
 "invoice automatically.\n"
 "            It installs the account_analytic_analysis module."
 msgstr ""
+"顧客との契約条件を定義できます：\n"
+"            請求方法(固定価格、タイムシート、事前請求)、\n"
+"            価格設定(開発者に対して650€/日)、\n"
+"            期間(年間サポート契約)。\n"
+"            契約の進行状況に追従して自動的に請求することができます。\n"
+"            account_analytic_analysisモジュールがインストールされます。"
 
 #. module: sale
 #: model:email.template,report_name:sale.email_template_edi_sale
@@ -1790,7 +1815,7 @@ msgstr ""
 #. module: sale
 #: view:sale.config.settings:0
 msgid "Contract Features"
-msgstr ""
+msgstr "契約の機能"
 
 #. module: sale
 #: code:addons/sale/sale.py:287
@@ -1873,7 +1898,7 @@ msgstr "EDIの価格リスト（%s）"
 #. module: sale
 #: selection:sale.order,order_policy:0
 msgid "On Delivery Order"
-msgstr ""
+msgstr "配送時"
 
 #. module: sale
 #: view:sale.report:0
@@ -1975,7 +2000,7 @@ msgstr "Eメールテンプレート"
 msgid ""
 "To allow your salesman to make invoices for sales order lines using the menu "
 "'Lines to Invoice'."
-msgstr ""
+msgstr "「明細から請求」メニューを使用して受注明細の請求書を作成できるようにします。"
 
 #. module: sale
 #: view:sale.order.line:0
@@ -2033,7 +2058,7 @@ msgstr ""
 #. module: sale
 #: view:sale.advance.payment.inv:0
 msgid "Show Lines to Invoice"
-msgstr ""
+msgstr "請求の明細を表示"
 
 #. module: sale
 #: field:sale.report,date:0
@@ -2069,7 +2094,7 @@ msgstr "受注 "
 #. module: sale
 #: field:sale.config.settings,module_account_analytic_analysis:0
 msgid "Use contracts management"
-msgstr "契約管理を使う"
+msgstr "契約管理を使用する"
 
 #. module: sale
 #: help:sale.order,invoiced:0
@@ -2126,7 +2151,7 @@ msgid ""
 "                        multiple invoicing as part of the same contract "
 "with\n"
 "                        your customer."
-msgstr ""
+msgstr "複数の請求書を同じ契約の一部として管理できるようにします。"
 
 #. module: sale
 #: view:sale.order:0
@@ -2137,7 +2162,7 @@ msgstr "受注検索"
 #. module: sale
 #: field:sale.advance.payment.inv,advance_payment_method:0
 msgid "What do you want to invoice?"
-msgstr ""
+msgstr "どの請求をしますか？"
 
 #. module: sale
 #: view:sale.order.line:0

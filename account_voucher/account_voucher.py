@@ -1048,7 +1048,8 @@ class account_voucher(osv.osv):
                 'period_id': voucher.period_id.id,
                 'partner_id': voucher.partner_id.id,
                 'currency_id': company_currency <> current_currency and  current_currency or False,
-                'amount_currency': company_currency <> current_currency and sign * voucher.amount or 0.0,
+                'amount_currency': (sign * abs(voucher.amount)
+                    if company_currency != current_currency else 0.0),
                 'date': voucher.date,
                 'date_maturity': voucher.date_due
             }
@@ -1268,8 +1269,7 @@ class account_voucher(osv.osv):
                         # otherwise we use the rates of the system
                         amount_currency = currency_obj.compute(cr, uid, company_currency, line.move_line_id.currency_id.id, move_line['debit']-move_line['credit'], context=ctx)
                 if line.amount == line.amount_unreconciled:
-                    sign = voucher.type in ('payment', 'purchase') and -1 or 1
-                    foreign_currency_diff = sign * line.move_line_id.amount_residual_currency + amount_currency
+                    foreign_currency_diff = (line.move_line_id.amount_residual_currency - abs(amount_currency))
 
             move_line['amount_currency'] = amount_currency
             voucher_line = move_line_obj.create(cr, uid, move_line)
@@ -1380,6 +1380,7 @@ class account_voucher(osv.osv):
         move_pool = self.pool.get('account.move')
         move_line_pool = self.pool.get('account.move.line')
         for voucher in self.browse(cr, uid, ids, context=context):
+            local_context = dict(context, force_company=voucher.journal_id.company_id.id)
             if voucher.move_id:
                 continue
             company_currency = self._get_company_currency(cr, uid, voucher.id, context)
@@ -1394,7 +1395,7 @@ class account_voucher(osv.osv):
             # Get the name of the account_move just created
             name = move_pool.browse(cr, uid, move_id, context=context).name
             # Create the first line of the voucher
-            move_line_id = move_line_pool.create(cr, uid, self.first_move_line_get(cr,uid,voucher.id, move_id, company_currency, current_currency, context), context)
+            move_line_id = move_line_pool.create(cr, uid, self.first_move_line_get(cr,uid,voucher.id, move_id, company_currency, current_currency, local_context), local_context)
             move_line_brw = move_line_pool.browse(cr, uid, move_line_id, context=context)
             line_total = move_line_brw.debit - move_line_brw.credit
             rec_list_ids = []
@@ -1406,9 +1407,9 @@ class account_voucher(osv.osv):
             line_total, rec_list_ids = self.voucher_move_line_create(cr, uid, voucher.id, line_total, move_id, company_currency, current_currency, context)
 
             # Create the writeoff line if needed
-            ml_writeoff = self.writeoff_move_line_get(cr, uid, voucher.id, line_total, move_id, name, company_currency, current_currency, context)
+            ml_writeoff = self.writeoff_move_line_get(cr, uid, voucher.id, line_total, move_id, name, company_currency, current_currency, local_context)
             if ml_writeoff:
-                move_line_pool.create(cr, uid, ml_writeoff, context)
+                move_line_pool.create(cr, uid, ml_writeoff, local_context)
             # We post the voucher.
             self.write(cr, uid, [voucher.id], {
                 'move_id': move_id,
@@ -1621,7 +1622,11 @@ class account_bank_statement(osv.osv):
         bank_st_line_obj = self.pool.get('account.bank.statement.line')
         st_line = bank_st_line_obj.browse(cr, uid, st_line_id, context=context)
         if st_line.voucher_id:
-            voucher_obj.write(cr, uid, [st_line.voucher_id.id], {'number': next_number}, context=context)
+            voucher_obj.write(cr, uid, [st_line.voucher_id.id],
+                            {'number': next_number,
+                            'date': st_line.date,
+                            'period_id': st_line.statement_id.period_id.id},
+                            context=context)
             if st_line.voucher_id.state == 'cancel':
                 voucher_obj.action_cancel_draft(cr, uid, [st_line.voucher_id.id], context=context)
             wf_service.trg_validate(uid, 'account.voucher', st_line.voucher_id.id, 'proforma_voucher', cr)

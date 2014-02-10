@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2014-01-18 11:47+0000\n"
+"PO-Revision-Date: 2014-02-08 16:25+0000\n"
 "Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-01-19 05:59+0000\n"
-"X-Generator: Launchpad (build 16901)\n"
+"X-Launchpad-Export-Date: 2014-02-09 06:51+0000\n"
+"X-Generator: Launchpad (build 16916)\n"
 
 #. module: product
 #: field:product.packaging,rows:0
@@ -447,7 +447,7 @@ msgstr "調達"
 #. module: product
 #: model:res.groups,name:product.group_mrp_properties
 msgid "Manage Properties of Product"
-msgstr ""
+msgstr "製品の属性を管理"
 
 #. module: product
 #: help:product.uom,factor:0
@@ -477,7 +477,7 @@ msgstr "数量-3"
 #. module: product
 #: model:res.groups,name:product.group_product_variant
 msgid "Product Variant (not supported)"
-msgstr ""
+msgstr "異形製品 (サポートされていません)"
 
 #. module: product
 #: field:product.price_list,qty4:0
@@ -1070,7 +1070,7 @@ msgid ""
 "The minimal quantity to purchase to this supplier, expressed in the supplier "
 "Product Unit of Measure if not empty, in the default unit of measure of the "
 "product otherwise."
-msgstr ""
+msgstr "この仕入先から購入する最小数量です。空でない場合は仕入先の製品単位、そうでなければ製品のデフォルト単位を表します。"
 
 #. module: product
 #: view:product.product:0
@@ -1330,7 +1330,7 @@ msgstr ""
 #. module: product
 #: view:product.product:0
 msgid "This note will be displayed on requests for quotation..."
-msgstr ""
+msgstr "このメモは見積り要求書に表示されます…"
 
 #. module: product
 #: view:product.product:0
@@ -1759,7 +1759,7 @@ msgstr ""
 #. module: product
 #: model:res.groups,name:product.group_uos
 msgid "Manage Secondary Unit of Measure"
-msgstr ""
+msgstr "副次的な単位を管理"
 
 #. module: product
 #: help:product.uom,rounding:0
@@ -1986,6 +1986,14 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして新しい製品を定義してください。\n"
+"              </p><p>\n"
+"                消耗品やサービスなど、それが物理的な製品かどうかに関わらず購入するすべてを定義します。\n"
+"              </p><p>\n"
+"                製品フォームには価格、調達方法、会計データ、仕入先など購入プロセスを改善するための詳細な情報が含まれます。\n"
+"              </p>\n"
+"            "
 
 #. module: product
 #: model:product.template,description_sale:product.product_product_44_product_template
@@ -2033,7 +2041,7 @@ msgstr "価格リスト名"
 #. module: product
 #: view:product.product:0
 msgid "Description for Suppliers"
-msgstr ""
+msgstr "仕入先の説明"
 
 #. module: product
 #: field:product.supplierinfo,delay:0
@@ -2184,7 +2192,7 @@ msgstr "説明"
 #. module: product
 #: model:res.groups,name:product.group_stock_packaging
 msgid "Manage Product Packaging"
-msgstr ""
+msgstr "製品パッケージを管理"
 
 #. module: product
 #: model:product.category,name:product.product_category_2
@@ -2282,7 +2290,7 @@ msgstr "最小利鞘"
 #. module: product
 #: model:res.groups,name:product.group_uom
 msgid "Manage Multiple Units of Measure"
-msgstr ""
+msgstr "複数の単位を管理"
 
 #. module: product
 #: help:product.packaging,weight:0
