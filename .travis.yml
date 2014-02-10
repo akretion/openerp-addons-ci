@@ -13,7 +13,7 @@ services:
 before_script:
     - psql -c "CREATE USER openerp WITH PASSWORD 'admin';" -U postgres
     - psql -c 'create database rsocb with owner openerp;' -U postgres
-    - python ../server/openerp-server --db_user=postgres --db_user=openerp --db_password=admin --db_host=localhost --stop-after-init --addons-path=openerp-addons-ci,web/addons -i base -d rsocb
+    - python ../server/openerp-server --db_user=postgres --db_user=openerp --db_password=admin --db_host=localhost --stop-after-init --addons-path=../openerp-addons-ci,../web/addons -i base -d rsocb
 
 install:
     - ./.travis_install_nightly.sh
