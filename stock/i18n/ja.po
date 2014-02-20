@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-02-06 15:56+0000\n"
-"PO-Revision-Date: 2014-02-08 10:41+0000\n"
+"PO-Revision-Date: 2014-02-18 18:05+0000\n"
 "Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-09 06:52+0000\n"
+"X-Launchpad-Export-Date: 2014-02-19 05:40+0000\n"
 "X-Generator: Launchpad (build 16916)\n"
 
 #. module: stock
@@ -235,7 +235,7 @@ msgstr "オプションの商品配送先アドレス（割当で使用）"
 #. module: stock
 #: model:ir.actions.server,name:stock.action_partial_move_server
 msgid "Deliver/Receive Products"
-msgstr "製品配送/受領"
+msgstr "製品配送/入荷"
 
 #. module: stock
 #: code:addons/stock/report/report_stock.py:78
@@ -447,7 +447,7 @@ msgstr "入荷可能"
 #: selection:report.stock.inventory,location_type:0
 #: selection:stock.location,usage:0
 msgid "Internal Location"
-msgstr "内部の場所"
+msgstr "内部ロケーション"
 
 #. module: stock
 #: view:stock.move:0
@@ -503,7 +503,7 @@ msgstr "入荷待ち"
 #: view:stock.production.lot:0
 #: field:stock.production.lot,stock_available:0
 msgid "Available"
-msgstr "出荷可能"
+msgstr "処理可能"
 
 #. module: stock
 #: view:stock.picking:0
@@ -524,7 +524,7 @@ msgstr ""
 #. module: stock
 #: field:stock.warehouse,lot_output_id:0
 msgid "Location Output"
-msgstr "場所の出力"
+msgstr "ロケーション出力"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.split_into
@@ -577,7 +577,7 @@ msgstr "製品： "
 #: field:report.stock.inventory,location_type:0
 #: field:stock.location,usage:0
 msgid "Location Type"
-msgstr "場所のタイプ"
+msgstr "ロケーションタイプ"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_inventory_form_draft
@@ -614,6 +614,13 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                クリックして内部移動要求を作成してください。\n"
+"              </p><p>\n"
+"                "
+"ほとんどの操作は事前に設定した物流ルールにしたがってOpenERPが自動で行いますが、マニュアルで在庫移動することもできます。\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: model:ir.actions.report.xml,name:stock.report_move_labels
@@ -731,7 +738,7 @@ msgstr "追加情報"
 #: report:lot.stock.overview:0
 #: report:lot.stock.overview_all:0
 msgid "Location / Product"
-msgstr "場所 / 製品"
+msgstr "ロケーション/製品"
 
 #. module: stock
 #: field:stock.move,partner_id:0
@@ -758,7 +765,7 @@ msgstr ""
 #: field:stock.location,complete_name:0
 #: field:stock.location,name:0
 msgid "Location Name"
-msgstr "場所名"
+msgstr "ロケーション名"
 
 #. module: stock
 #: view:stock.inventory:0
@@ -863,7 +870,7 @@ msgstr ""
 #: model:ir.actions.act_window,name:stock.action_location_tree
 #: model:ir.ui.menu,name:stock.menu_action_location_tree
 msgid "Location Structure"
-msgstr "場所の構造"
+msgstr "ロケーション構造"
 
 #. module: stock
 #: field:stock.location,child_ids:0
@@ -933,7 +940,7 @@ msgstr "目的地への移動"
 #. module: stock
 #: field:stock.location,partner_id:0
 msgid "Location Address"
-msgstr "場所の住所"
+msgstr "ロケーション所在地"
 
 #. module: stock
 #: model:ir.model,name:stock.model_stock_move_scrap
@@ -957,7 +964,7 @@ msgstr "重量"
 #. module: stock
 #: field:stock.warehouse,lot_input_id:0
 msgid "Location Input"
-msgstr "場所の入力"
+msgstr "ロケーション入力"
 
 #. module: stock
 #: help:stock.partial.move,hide_tracking:0
@@ -985,7 +992,7 @@ msgstr "IT仕入先"
 #. module: stock
 #: view:stock.config.settings:0
 msgid "Location & Warehouse"
-msgstr "場所と倉庫"
+msgstr "ロケーションと倉庫"
 
 #. module: stock
 #: selection:report.stock.inventory,month:0
@@ -999,7 +1006,7 @@ msgstr "12月"
 msgid ""
 "You cannot cancel the picking as some moves have been done. You should "
 "cancel the picking lines."
-msgstr ""
+msgstr "移動履歴があるためピッキングをキャンセルできません。ピッキング明細のキャンセルを試みてください。"
 
 #. module: stock
 #: field:stock.config.settings,decimal_precision:0
@@ -1141,7 +1148,7 @@ msgstr "部分移動処理ウィザード"
 #. module: stock
 #: model:ir.actions.act_window,name:stock.act_stock_product_location_open
 msgid "Stock by Location"
-msgstr "場所別の在庫"
+msgstr "ロケーション別在庫"
 
 #. module: stock
 #: model:ir.ui.menu,name:stock.menu_stock_warehouse_mgmt
@@ -1219,7 +1226,7 @@ msgstr ""
 #. module: stock
 #: view:stock.config.settings:0
 msgid "Apply"
-msgstr ""
+msgstr "適用"
 
 #. module: stock
 #: field:product.template,loc_row:0
@@ -1609,7 +1616,7 @@ msgstr "確認済、利用可能、完了の集荷のみ返却できます。"
 #. module: stock
 #: view:stock.location:0
 msgid "Stock Locations"
-msgstr "在庫場所"
+msgstr "在庫ロケーション"
 
 #. module: stock
 #: view:stock.picking:0
@@ -1713,7 +1720,7 @@ msgstr "在庫分割行"
 #: model:ir.actions.report.xml,name:stock.report_location_overview
 #: report:lot.stock.overview:0
 msgid "Location Inventory Overview"
-msgstr "在庫場所の概要"
+msgstr "ロケーション在庫概要"
 
 #. module: stock
 #: view:report.stock.inventory:0
@@ -1768,7 +1775,7 @@ msgstr "請求書：%s"
 #: view:stock.location:0
 #: field:stock.location,location_id:0
 msgid "Parent Location"
-msgstr "親の場所"
+msgstr "親ロケーション"
 
 #. module: stock
 #: code:addons/stock/product.py:168
@@ -1811,7 +1818,7 @@ msgstr ""
 #: view:product.product:0
 #: view:product.template:0
 msgid "Storage Location"
-msgstr "保管場所"
+msgstr "保管ロケーション"
 
 #. module: stock
 #: help:stock.partial.move.line,currency:0
@@ -1952,7 +1959,7 @@ msgstr "棚 2"
 #: code:addons/stock/stock.py:543
 #, python-format
 msgid "You cannot remove a lot line."
-msgstr ""
+msgstr "ロット明細は削除できません。"
 
 #. module: stock
 #: help:stock.location,posx:0
@@ -2057,7 +2064,7 @@ msgstr "拡張フィルタ…"
 #. module: stock
 #: field:stock.warehouse,lot_stock_id:0
 msgid "Location Stock"
-msgstr "在庫場所"
+msgstr "ロケーション在庫"
 
 #. module: stock
 #: code:addons/stock/wizard/stock_partial_picking.py:97
@@ -2112,7 +2119,7 @@ msgstr "ロット番号"
 #: model:ir.actions.act_window,name:stock.action_deliver_move
 #: view:product.product:0
 msgid "Deliveries"
-msgstr ""
+msgstr "配送"
 
 #. module: stock
 #: model:ir.actions.act_window,help:stock.action_reception_picking_move
@@ -2265,7 +2272,7 @@ msgstr "在庫移動ごとに会計項目を生成"
 #: code:addons/stock/product.py:450
 #, python-format
 msgid "Received Qty"
-msgstr "受領済数量"
+msgstr "入荷済数量"
 
 #. module: stock
 #: field:stock.production.lot,ref:0
@@ -2416,7 +2423,7 @@ msgstr "出荷タイプの定義、商品は入ってくるのか出て行くの
 #. module: stock
 #: view:stock.config.settings:0
 msgid "Accounting"
-msgstr ""
+msgstr "会計"
 
 #. module: stock
 #: model:ir.ui.menu,name:stock.menu_warehouse_config
@@ -2463,7 +2470,7 @@ msgstr ""
 #. module: stock
 #: view:stock.location:0
 msgid "Chained Locations"
-msgstr "連鎖した場所"
+msgstr "連鎖ロケーション"
 
 #. module: stock
 #: model:stock.location,name:stock.location_inventory
@@ -2485,7 +2492,7 @@ msgstr "単位"
 #. module: stock
 #: field:stock.config.settings,group_stock_multiple_locations:0
 msgid "Manage multiple locations and warehouses"
-msgstr "複数の場所と倉庫を管理"
+msgstr "複数ロケーション・倉庫を管理"
 
 #. module: stock
 #: field:stock.config.settings,group_stock_production_lot:0
@@ -2547,7 +2554,7 @@ msgstr "入庫ロット追跡"
 #. module: stock
 #: view:stock.location:0
 msgid "Internal Locations"
-msgstr "内部の場所"
+msgstr "内部ロケーション"
 
 #. module: stock
 #: view:board.board:0
@@ -2651,7 +2658,7 @@ msgstr "配送方法"
 #: help:stock.picking.in,location_dest_id:0
 #: help:stock.picking.out,location_dest_id:0
 msgid "Location where the system will stock the finished products."
-msgstr "システムが完成した製品を在庫する場所です。"
+msgstr "システムが完成品を在庫するロケーション。"
 
 #. module: stock
 #: view:board.board:0
@@ -2775,7 +2782,7 @@ msgstr "移動元"
 #: field:stock.report.prodlots,location_id:0
 #: field:stock.report.tracklots,location_id:0
 msgid "Location"
-msgstr "場所"
+msgstr "ロケーション"
 
 #. module: stock
 #: model:ir.model,name:stock.model_stock_picking
@@ -2810,7 +2817,7 @@ msgstr "単位"
 #. module: stock
 #: selection:stock.location,chained_location_type:0
 msgid "Fixed Location"
-msgstr "固定の場所"
+msgstr "固定ロケーション"
 
 #. module: stock
 #: field:report.stock.inventory,scrap_location:0
@@ -2946,7 +2953,7 @@ msgstr ""
 #: code:addons/stock/wizard/stock_partial_picking.py:100
 #, python-format
 msgid "Receive Products"
-msgstr "製品の受領"
+msgstr "製品入荷"
 
 #. module: stock
 #: selection:report.stock.inventory,location_type:0
@@ -3105,7 +3112,7 @@ msgstr "移動している製品のシリアル番号を選択すると、その
 #: code:addons/stock/wizard/stock_partial_picking.py:95
 #, python-format
 msgid "_Receive"
-msgstr ""
+msgstr "_入荷"
 
 #. module: stock
 #: field:stock.incoterms,active:0
@@ -3495,7 +3502,7 @@ msgstr "通路（X）"
 #. module: stock
 #: field:stock.config.settings,group_stock_packaging:0
 msgid "Allow to define several packaging methods on products"
-msgstr "複数の梱包方法を製品に定義できます。"
+msgstr "複数の梱包方法を製品に定義"
 
 #. module: stock
 #: model:stock.location,name:stock.stock_location_7
@@ -3523,7 +3530,7 @@ msgstr "他の操作待ち"
 #. module: stock
 #: view:stock.location:0
 msgid "Supplier Locations"
-msgstr "仕入先場所"
+msgstr "仕入先ロケーション"
 
 #. module: stock
 #: field:stock.partial.move.line,wizard_id:0
@@ -3541,7 +3548,7 @@ msgstr "在庫移動の完了"
 #: model:ir.actions.act_window,name:stock.action_view_stock_location_product
 #: model:ir.model,name:stock.model_stock_location_product
 msgid "Products by Location"
-msgstr "場所別の製品"
+msgstr "ロケーション別製品"
 
 #. module: stock
 #: view:stock.config.settings:0
@@ -3599,7 +3606,7 @@ msgstr "梱包の参照"
 #: field:stock.move,location_id:0
 #: field:stock.move.split,location_id:0
 msgid "Source Location"
-msgstr "元の場所"
+msgstr "移動元ロケーション"
 
 #. module: stock
 #: view:product.template:0
@@ -3665,7 +3672,7 @@ msgstr "全てを一度に"
 #. module: stock
 #: model:ir.actions.act_window,name:stock.act_product_stock_move_open
 msgid "Inventory Move"
-msgstr ""
+msgstr "在庫移動"
 
 #. module: stock
 #: code:addons/stock/product.py:476
@@ -3819,7 +3826,7 @@ msgstr "アイコン"
 #: selection:report.stock.inventory,location_type:0
 #: selection:stock.location,usage:0
 msgid "Transit Location for Inter-Companies Transfers"
-msgstr "会社間転送の中継場所"
+msgstr "会社間移動中継ロケーション"
 
 #. module: stock
 #: field:stock.partial.move,hide_tracking:0
@@ -4025,7 +4032,7 @@ msgstr ""
 #. module: stock
 #: view:stock.location:0
 msgid "Stock Location"
-msgstr "在庫場所"
+msgstr "在庫ロケーション"
 
 #. module: stock
 #: help:stock.location,scrap_location:0
@@ -4109,7 +4116,7 @@ msgstr "設定"
 #. module: stock
 #: model:res.groups,name:stock.group_locations
 msgid "Manage Multiple Locations and Warehouses"
-msgstr "複数の場所と倉庫を管理"
+msgstr "複数ロケーション・倉庫を管理"
 
 #. module: stock
 #: help:stock.change.standard.price,new_price:0
@@ -4308,7 +4315,7 @@ msgstr "情報"
 #: code:addons/stock/stock.py:1213
 #, python-format
 msgid "You cannot remove the picking which is in %s state!"
-msgstr ""
+msgstr "%s ステータスのピッキングは削除できません。"
 
 #. module: stock
 #: help:res.partner,property_stock_customer:0
@@ -4566,7 +4573,7 @@ msgstr ""
 #: view:stock.location:0
 #: view:stock.move:0
 msgid "Locations"
-msgstr "場所"
+msgstr "ロケーション"
 
 #. module: stock
 #: help:stock.picking,backorder_id:0
@@ -4704,13 +4711,13 @@ msgstr ""
 #. module: stock
 #: view:stock.picking.out:0
 msgid "Deliver"
-msgstr ""
+msgstr "配送"
 
 #. module: stock
 #: view:product.product:0
 #: field:product.product,delivery_count:0
 msgid "Delivery"
-msgstr ""
+msgstr "配送"
 
 #. module: stock
 #: view:stock.fill.inventory:0
@@ -4726,7 +4733,7 @@ msgstr "上流追跡能力"
 #: model:ir.actions.report.xml,name:stock.report_location_overview_all
 #: report:lot.stock.overview_all:0
 msgid "Location Content"
-msgstr "場所のコンテンツ"
+msgstr "ロケーション内容"
 
 #. module: stock
 #: code:addons/stock/product.py:478
@@ -4744,7 +4751,7 @@ msgstr "在庫払出勘定"
 #. module: stock
 #: field:stock.location,chained_location_type:0
 msgid "Chained Location Type"
-msgstr "連鎖場所のタイプ"
+msgstr "連鎖ロケーションタイプ"
 
 #. module: stock
 #: help:stock.picking,min_date:0
@@ -4814,7 +4821,7 @@ msgstr "確認・移動"
 #: field:stock.location,scrap_location:0
 #: view:stock.move.scrap:0
 msgid "Scrap Location"
-msgstr "廃棄場所"
+msgstr "廃棄ロケーション"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_partial_picking

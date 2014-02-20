@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2014-02-06 15:56+0000\n"
-"PO-Revision-Date: 2014-01-20 10:49+0000\n"
+"PO-Revision-Date: 2014-02-14 11:58+0000\n"
 "Last-Translator: Andy Cheng <andy@dobtor.com>\n"
 "Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-07 07:13+0000\n"
+"X-Launchpad-Export-Date: 2014-02-15 07:37+0000\n"
 "X-Generator: Launchpad (build 16916)\n"
 
 #. module: stock
@@ -565,7 +565,7 @@ msgid ""
 "The average delay in days between the confirmation of the customer order and "
 "the delivery of the finished products. It's the time you promise to your "
 "customers."
-msgstr ""
+msgstr "在客戶訂單確認和出貨之間的平均延遲天數。這是你承諾客戶的出貨時間。"
 
 #. module: stock
 #: code:addons/stock/product.py:195
@@ -1767,7 +1767,7 @@ msgstr ""
 #: help:stock.incoterms,active:0
 msgid ""
 "By unchecking the active field, you may hide an INCOTERM without deleting it."
-msgstr ""
+msgstr "取消「有效」欄位以隱藏 INCOTERM 但不刪除此記錄。"
 
 #. module: stock
 #: view:stock.picking:0
@@ -1893,7 +1893,7 @@ msgstr "庫存估價科目（出庫）"
 #: code:addons/stock/stock.py:1805
 #, python-format
 msgid "Operation Forbidden!"
-msgstr ""
+msgstr "作業被禁止！"
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_move_form2
@@ -2273,7 +2273,7 @@ msgstr "您試圖指派一個不同產品的批號"
 #. module: stock
 #: field:report.stock.move,day_diff1:0
 msgid "Planned Lead Time (Days)"
-msgstr ""
+msgstr "規劃前導時間(天)"
 
 #. module: stock
 #: field:stock.change.standard.price,new_price:0
@@ -2467,7 +2467,7 @@ msgstr "自動，無額外調動"
 msgid ""
 "Move date: scheduled date until move is done, then date of actual move "
 "processing"
-msgstr ""
+msgstr "調動日期：調動完成前為規劃日期，完成後為實際處理日期。"
 
 #. module: stock
 #: view:report.stock.inventory:0
@@ -2493,6 +2493,13 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                點擊新增一個庫存調動。\n"
+"              </p><p>\n"
+"                此選單提供您在特定產品上，盤點作業完整的上下游追溯。\n"
+"                您可以在產品上篩選檢視所有過去或未來的調動。\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: view:stock.location:0
@@ -2586,7 +2593,7 @@ msgstr "內部倉位"
 #. module: stock
 #: view:board.board:0
 msgid "Warehouse board"
-msgstr ""
+msgstr "倉庫控制面板"
 
 #. module: stock
 #: code:addons/stock/product.py:470
@@ -2613,7 +2620,7 @@ msgstr "備註"
 msgid ""
 "The unit of measure rounding does not allow you to ship \"%s %s\", only "
 "rounding of \"%s %s\" is accepted by the Unit of Measure."
-msgstr ""
+msgstr "您無法以這個度量單位運送「%s %s」，僅能接受四捨五入後的「%s %s」。"
 
 #. module: stock
 #: report:lot.stock.overview:0
@@ -2753,7 +2760,7 @@ msgid ""
 "Inventory Analysis allows you to easily check and analyse your company stock "
 "levels. Sort and group by selection criteria in order to better analyse and "
 "manage your company  activities."
-msgstr ""
+msgstr "庫存分析讓您輕鬆地檢查及分析您公司的庫存水平。藉由篩選條件進行排序及分組，協助您妥善的分析與管理您公司的活動。"
 
 #. module: stock
 #: help:report.stock.move,location_id:0
@@ -2761,7 +2768,7 @@ msgstr ""
 msgid ""
 "Sets a location if you produce at a fixed location. This can be a partner "
 "location if you subcontract the manufacturing operations."
-msgstr ""
+msgstr "假如您在一個固定地點生產，則請設定倉位。假如您有外包製造，則可以設為一個夥伴倉位。"
 
 #. module: stock
 #: view:stock.invoice.onshipping:0
@@ -2771,7 +2778,7 @@ msgstr "建立"
 #. module: stock
 #: field:stock.change.product.qty,new_quantity:0
 msgid "New Quantity on Hand"
-msgstr ""
+msgstr "在庫數量調整"
 
 #. module: stock
 #: field:stock.move,priority:0
@@ -2855,12 +2862,12 @@ msgstr "報廢"
 msgid ""
 "By changing the quantity here, you accept the new quantity as complete: "
 "OpenERP will not automatically generate a Back Order."
-msgstr ""
+msgstr "修改此處的數量，則以新的數量視為完成。OpenERP 將不會自動建立一個延期交貨單。"
 
 #. module: stock
 #: report:stock.inventory.move:0
 msgid "Manual Quantity"
-msgstr ""
+msgstr "手動調整數量"
 
 #. module: stock
 #: view:product.product:0
@@ -2895,7 +2902,7 @@ msgid ""
 "specific filtering criteria. If you do frequent and partial inventories, you "
 "need this report in order to ensure that the stock of each product is "
 "controlled at least once a year."
-msgstr ""
+msgstr "顯示您最後一次盤點結果，並可輕鬆地用篩選條件排序。假如您經常進行部分盤點，建議您至少每年一次以這份報表確定控管每個產品的庫存。"
 
 #. module: stock
 #: code:addons/stock/wizard/stock_invoice_onshipping.py:112
@@ -2914,6 +2921,13 @@ msgid ""
 "    - alert date.\n"
 "This installs the module product_expiry."
 msgstr ""
+"對產品及序號追蹤不同的日期。\n"
+"以下的日期可被追蹤：\n"
+"     - 壽命終止日期\n"
+"     - 最佳使用日期\n"
+"     - 移除日期\n"
+"     - 提醒日期\n"
+"此功能將安裝模組 product_expiry 。"
 
 #. module: stock
 #: code:addons/stock/wizard/stock_partial_picking.py:174
@@ -3016,7 +3030,7 @@ msgstr "完成日期"
 #: code:addons/stock/stock.py:1680
 #, python-format
 msgid "You cannot move product %s from a location of type view %s."
-msgstr ""
+msgstr "您不能將產品 %s 由類別為「檢視」的倉位 %s 中移出。"
 
 #. module: stock
 #: model:stock.location,name:stock.stock_location_company
@@ -3027,7 +3041,7 @@ msgstr "您的公司"
 #: help:stock.tracking,active:0
 msgid ""
 "By unchecking the active field, you may hide a pack without deleting it."
-msgstr ""
+msgstr "取消勾選「使用中」欄位，將隱藏但不刪除該包裹。"
 
 #. module: stock
 #: view:stock.production.lot:0
@@ -3069,6 +3083,13 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                點擊新增倉位。\n"
+"              </p><p>\n"
+"                這是您的公司倉庫與倉位的架構。您可以點選一個倉位取得產\n"
+"                品清單與該倉位及子倉位的庫存水平。\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: field:stock.location,stock_real:0
@@ -3100,7 +3121,7 @@ msgstr "批次"
 msgid ""
 "Total quantity after split exceeds the quantity to split for this product: "
 "\"%s\" (id: %d)."
-msgstr ""
+msgstr "分拆後總數量超過本產品欲分拆的數量： \"%s\" (id: %d)。"
 
 #. module: stock
 #: view:stock.partial.move.line:0
@@ -3129,7 +3150,7 @@ msgstr "聯絡人地址："
 msgid ""
 "When you select a serial number on product moves, you can get the upstream "
 "or downstream traceability of that product."
-msgstr ""
+msgstr "當您在產品調動中選擇了序號，即可啟用此產品的上下游追溯。"
 
 #. module: stock
 #: code:addons/stock/wizard/stock_partial_picking.py:95
@@ -3162,7 +3183,7 @@ msgstr ""
 #: model:ir.ui.menu,name:stock.menu_action_incoterm_open
 #: view:stock.incoterms:0
 msgid "Incoterms"
-msgstr ""
+msgstr "國際商業用語"
 
 #. module: stock
 #: model:ir.model,name:stock.model_stock_partial_picking_line
@@ -3182,7 +3203,7 @@ msgid ""
 "Incoterms are series of sales terms.They are used to divide transaction "
 "costs and responsibilities between buyer and seller and reflect state-of-the-"
 "art transportation practices."
-msgstr ""
+msgstr "國際商業用語（Incoterms）是一系列的交易用詞彙。使用在區分買賣雙方的交易成本與責任，以及反映實務運輸方式。"
 
 #. module: stock
 #: model:ir.actions.act_window,help:stock.action_receive_move
@@ -3197,19 +3218,26 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                點擊登錄產品收貨單。 \n"
+"              </p><p>\n"
+"                您可以在這裡找到所有與該產品相關的收貨記錄，以及等待中\n"
+"                的所有待收貨清單。\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: help:stock.fill.inventory,recursive:0
 msgid ""
 "If checked, products contained in child locations of selected location will "
 "be included as well."
-msgstr ""
+msgstr "如果勾選，將包含所選倉位及子倉位產品。"
 
 #. module: stock
 #: help:stock.config.settings,group_stock_inventory_valuation:0
 msgid ""
 "Allows to configure inventory valuations on products and product categories."
-msgstr ""
+msgstr "讓您可在產品或者產品分類設定存貨估價。"
 
 #. module: stock
 #: help:stock.config.settings,module_stock_location:0
@@ -3221,12 +3249,16 @@ msgid ""
 "needs, etc.\n"
 "                This installs the module stock_location."
 msgstr ""
+"提供推送拉入庫存流程。範例使用如：\n"
+"                管理產品的製造鏈、管理每個產品的預設倉位、根據企業需求定義倉庫內的物流\n"
+"                路徑等等。 \n"
+"                此功能將安裝 stock_location 模組。"
 
 #. module: stock
 #: view:stock.inventory:0
 #: field:stock.inventory,name:0
 msgid "Inventory Reference"
-msgstr ""
+msgstr "盤點參考號"
 
 #. module: stock
 #: model:ir.actions.act_window,help:stock.action_out_picking_move
@@ -3247,6 +3279,15 @@ msgid ""
 "              </p>\n"
 "            "
 msgstr ""
+"<p class=\"oe_view_nocontent_create\">\n"
+"                點擊登錄一張產品出貨單。\n"
+"              </p>\n"
+"              <p>\n"
+"                您可在列表中找到所有您應出貨給客戶的產品。您可以由列表\n"
+"                中每個項目右側按鈕直接處理交貨。您能夠依客戶、產品或銷\n"
+"               售訂單（使用「來源」欄位）篩選待出貨的產品。\n"
+"              </p>\n"
+"            "
 
 #. module: stock
 #: view:stock.move:0
@@ -3256,17 +3297,17 @@ msgstr "處理程序"
 #. module: stock
 #: field:stock.production.lot.revision,name:0
 msgid "Revision Name"
-msgstr ""
+msgstr "版本名稱"
 
 #. module: stock
 #: model:res.groups,name:stock.group_tracking_lot
 msgid "Manage Logistic Serial Numbers"
-msgstr ""
+msgstr "管理物流序號"
 
 #. module: stock
 #: view:stock.inventory:0
 msgid "Confirm Inventory"
-msgstr ""
+msgstr "確認盤點"
 
 #. module: stock
 #: model:ir.actions.act_window,help:stock.action_tracking_form
@@ -3287,12 +3328,12 @@ msgstr ""
 #: code:addons/stock/stock.py:2545
 #, python-format
 msgid "%s %s %s has been <b>moved to</b> scrap."
-msgstr ""
+msgstr "%s %s %s 已被 <b>調動到</b> 報廢倉."
 
 #. module: stock
 #: model:ir.actions.act_window,name:stock.action_picking_tree_out
 msgid "Customers Packings"
-msgstr ""
+msgstr "客戶包裹"
 
 #. module: stock
 #: selection:report.stock.inventory,state:0
@@ -3326,31 +3367,31 @@ msgstr "虛擬地點"
 #: selection:stock.picking.in,invoice_state:0
 #: selection:stock.picking.out,invoice_state:0
 msgid "To Be Invoiced"
-msgstr ""
+msgstr "待開發票"
 
 #. module: stock
 #: field:stock.inventory,date_done:0
 msgid "Date done"
-msgstr ""
+msgstr "完成日期"
 
 #. module: stock
 #: code:addons/stock/stock.py:1135
 #, python-format
 msgid ""
 "Please put a partner on the picking list if you want to generate invoice."
-msgstr ""
+msgstr "如果您想要開立發票，請在提貨清單上填寫業務夥伴。"
 
 #. module: stock
 #: view:stock.picking.in:0
 msgid "Confirm & Receive"
-msgstr ""
+msgstr "確認並接收"
 
 #. module: stock
 #: field:stock.picking,origin:0
 #: field:stock.picking.in,origin:0
 #: field:stock.picking.out,origin:0
 msgid "Source Document"
-msgstr ""
+msgstr "來源文件"
 
 #. module: stock
 #: selection:stock.move,priority:0
@@ -3360,7 +3401,7 @@ msgstr "不緊急"
 #. module: stock
 #: view:stock.move:0
 msgid "Scheduled"
-msgstr ""
+msgstr "已排程"
 
 #. module: stock
 #: view:stock.picking:0

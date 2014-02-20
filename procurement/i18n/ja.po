@@ -8,13 +8,13 @@ msgstr ""
 "Project-Id-Version: openobject-addons\n"
 "Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
 "POT-Creation-Date: 2013-06-07 19:37+0000\n"
-"PO-Revision-Date: 2014-02-08 16:41+0000\n"
-"Last-Translator: hiro TAKADA <tkhiro0712@gmail.com>\n"
+"PO-Revision-Date: 2014-02-13 11:15+0000\n"
+"Last-Translator: Yoshi Tashiro <yostashiro@gmail.com>\n"
 "Language-Team: Japanese <ja@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-02-09 06:51+0000\n"
+"X-Launchpad-Export-Date: 2014-02-14 07:44+0000\n"
 "X-Generator: Launchpad (build 16916)\n"
 
 #. module: procurement
@@ -176,7 +176,7 @@ msgstr ""
 #. module: procurement
 #: selection:procurement.order,state:0
 msgid "Cancelled"
-msgstr ""
+msgstr "取消済"
 
 #. module: procurement
 #: view:procurement.order:0
@@ -420,7 +420,7 @@ msgstr ""
 msgid ""
 "If you encode manually a Procurement, you probably want to use a make to "
 "order method."
-msgstr "調達を手動で作成する場合、あなたは恐らくオーダー方法のための型を使うことを望むでしょう。"
+msgstr "調達をマニュアル作成する場合、特別な理由がなければ「オーダ」を選択してください。"
 
 #. module: procurement
 #: model:ir.ui.menu,name:procurement.menu_stock_procurement
@@ -958,7 +958,7 @@ msgstr "再発注規則"
 #: code:addons/procurement/procurement.py:139
 #, python-format
 msgid "Cannot delete Procurement Order(s) which are in %s state."
-msgstr ""
+msgstr "%s ステータスの調達オーダは削除できません。"
 
 #. module: procurement
 #: field:procurement.order,product_uos:0
