@@ -37,6 +37,7 @@ from openerp import report
 import tempfile
 import time
 import logging
+from functools import partial
 
 from mako.template import Template
 from mako.lookup import TemplateLookup
@@ -68,7 +69,6 @@ class WebKitParser(report_sxw):
     """
     def __init__(self, name, table, rml=False, parser=False,
         header=True, store=False):
-        self.parser_instance = False
         self.localcontext = {}
         report_sxw.__init__(self, name, table, rml, parser,
             header, store)
@@ -105,8 +105,8 @@ class WebKitParser(report_sxw):
         """Call webkit in order to generate pdf"""
         if not webkit_header:
             webkit_header = report_xml.webkit_header
-        tmp_dir = tempfile.gettempdir()
-        out_filename = tempfile.mktemp(suffix=".pdf", prefix="webkit.tmp.")
+        fd, out_filename = tempfile.mkstemp(suffix=".pdf",
+                                            prefix="webkit.tmp.")
         file_to_del = [out_filename]
         if comm_path:
             command = [comm_path]
@@ -117,25 +117,15 @@ class WebKitParser(report_sxw):
         # default to UTF-8 encoding.  Use <meta charset="latin-1"> to override.
         command.extend(['--encoding', 'utf-8'])
         if header :
-            head_file = file( os.path.join(
-                                  tmp_dir,
-                                  str(time.time()) + '.head.html'
-                                 ),
-                                'w'
-                            )
-            head_file.write(self._sanitize_html(header))
-            head_file.close()
+            with tempfile.NamedTemporaryFile(suffix=".head.html",
+                                             delete=False) as head_file:
+                head_file.write(self._sanitize_html(header))
             file_to_del.append(head_file.name)
             command.extend(['--header-html', head_file.name])
         if footer :
-            foot_file = file(  os.path.join(
-                                  tmp_dir,
-                                  str(time.time()) + '.foot.html'
-                                 ),
-                                'w'
-                            )
-            foot_file.write(self._sanitize_html(footer))
-            foot_file.close()
+            with tempfile.NamedTemporaryFile(suffix=".foot.html",
+                                             delete=False) as foot_file:
+                foot_file.write(self._sanitize_html(footer))
             file_to_del.append(foot_file.name)
             command.extend(['--footer-html', foot_file.name])
 
@@ -153,10 +143,10 @@ class WebKitParser(report_sxw):
             command.extend(['--page-size', str(webkit_header.format).replace(',', '.')])
         count = 0
         for html in html_list :
-            html_file = file(os.path.join(tmp_dir, str(time.time()) + str(count) +'.body.html'), 'w')
-            count += 1
-            html_file.write(self._sanitize_html(html))
-            html_file.close()
+            with tempfile.NamedTemporaryFile(suffix="%d.body.html" %count,
+                                             delete=False) as html_file:
+                count += 1
+                html_file.write(self._sanitize_html(html))
             file_to_del.append(html_file.name)
             command.append(html_file.name)
         command.append(out_filename)
@@ -176,9 +166,9 @@ class WebKitParser(report_sxw):
             if status :
                 raise except_osv(_('Webkit error' ),
                                  _("The command 'wkhtmltopdf' failed with error code = %s. Message: %s") % (status, error_message))
-            pdf_file = open(out_filename, 'rb')
-            pdf = pdf_file.read()
-            pdf_file.close()
+            with open(out_filename, 'rb') as pdf_file:
+                pdf = pdf_file.read()
+            os.close(fd)
         finally:
             if stderr_fd is not None:
                 os.close(stderr_fd)
@@ -189,16 +179,16 @@ class WebKitParser(report_sxw):
                     _logger.error('cannot remove file %s: %s', f_to_del, exc)
         return pdf
 
-    def translate_call(self, src):
+    def translate_call(self, parser_instance, src):
         """Translate String."""
-        ir_translation = self.pool.get('ir.translation')
+        ir_translation = self.pool['ir.translation']
         name = self.tmpl and 'addons/' + self.tmpl or None
-        res = ir_translation._get_source(self.parser_instance.cr, self.parser_instance.uid,
-                                         name, 'report', self.parser_instance.localcontext.get('lang', 'en_US'), src)
+        res = ir_translation._get_source(parser_instance.cr, parser_instance.uid,
+                                         name, 'report', parser_instance.localcontext.get('lang', 'en_US'), src)
         if res == src:
             # no translation defined, fallback on None (backward compatibility)
-            res = ir_translation._get_source(self.parser_instance.cr, self.parser_instance.uid,
-                                             None, 'report', self.parser_instance.localcontext.get('lang', 'en_US'), src)
+            res = ir_translation._get_source(parser_instance.cr, parser_instance.uid,
+                                             None, 'report', parser_instance.localcontext.get('lang', 'en_US'), src)
         if not res :
             return src
         return res
@@ -213,14 +203,14 @@ class WebKitParser(report_sxw):
         if report_xml.report_type != 'webkit':
             return super(WebKitParser,self).create_single_pdf(cursor, uid, ids, data, report_xml, context=context)
 
-        self.parser_instance = self.parser(cursor,
-                                           uid,
-                                           self.name2,
-                                           context=context)
+        parser_instance = self.parser(cursor,
+                                      uid,
+                                      self.name2,
+                                      context=context)
 
         self.pool = pooler.get_pool(cursor.dbname)
         objs = self.getObjects(cursor, uid, ids, context)
-        self.parser_instance.set_context(objs, data, ids, report_xml.report_type)
+        parser_instance.set_context(objs, data, ids, report_xml.report_type)
 
         template =  False
 
@@ -250,18 +240,19 @@ class WebKitParser(report_sxw):
         if not css :
             css = ''
 
+        translate_call = partial(self.translate_call, parser_instance)
         #default_filters=['unicode', 'entity'] can be used to set global filter
         body_mako_tpl = mako_template(template)
         helper = WebKitHelper(cursor, uid, report_xml.id, context)
         if report_xml.precise_mode:
-            objs = self.parser_instance.localcontext['objects']
+            objs = parser_instance.localcontext['objects']
             for obj in objs:
-                self.parser_instance.localcontext['objects'] = [obj]
+                parser_instance.localcontext['objects'] = [obj]
                 try :
                     html = body_mako_tpl.render(helper=helper,
                                                 css=css,
-                                                _=self.translate_call,
-                                                **self.parser_instance.localcontext)
+                                                _=translate_call,
+                                                **parser_instance.localcontext)
                     htmls.append(html)
                 except Exception:
                     msg = exceptions.text_error_template().render()
@@ -271,8 +262,8 @@ class WebKitParser(report_sxw):
             try :
                 html = body_mako_tpl.render(helper=helper,
                                             css=css,
-                                            _=self.translate_call,
-                                            **self.parser_instance.localcontext)
+                                            _=translate_call,
+                                            **parser_instance.localcontext)
                 htmls.append(html)
             except Exception:
                 msg = exceptions.text_error_template().render()
@@ -282,9 +273,9 @@ class WebKitParser(report_sxw):
         try :
             head = head_mako_tpl.render(helper=helper,
                                         css=css,
-                                        _=self.translate_call,
+                                        _=translate_call,
                                         _debug=False,
-                                        **self.parser_instance.localcontext)
+                                        **parser_instance.localcontext)
         except Exception:
             raise except_osv(_('Webkit render!'),
                 exceptions.text_error_template().render())
@@ -294,8 +285,8 @@ class WebKitParser(report_sxw):
             try :
                 foot = foot_mako_tpl.render(helper=helper,
                                             css=css,
-                                            _=self.translate_call,
-                                            **self.parser_instance.localcontext)
+                                            _=translate_call,
+                                            **parser_instance.localcontext)
             except:
                 msg = exceptions.text_error_template().render()
                 _logger.error(msg)
@@ -305,8 +296,8 @@ class WebKitParser(report_sxw):
                 deb = head_mako_tpl.render(helper=helper,
                                            css=css,
                                            _debug=tools.ustr("\n".join(htmls)),
-                                           _=self.translate_call,
-                                           **self.parser_instance.localcontext)
+                                           _=translate_call,
+                                           **parser_instance.localcontext)
             except Exception:
                 msg = exceptions.text_error_template().render()
                 _logger.error(msg)
